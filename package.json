@@ -1,0 +1,18 @@
+{
+  "name": "drupalcon-2017-webvr-demo",
+  "version": "0.0.1",
+  "description": "WebVR DrupalCon 2017 Demo",
+  "main": "index.js",
+  "repository": "git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
+  "contributors": [
+    {
+      "name": "Patrick Coffey",
+      "email": "patrickcoffey48@gmail.com"
+    },
+    {
+      "name": "Joe Tower",
+      "email": "joe@fourkitchens.com"
+    }
+  ],
+  "license": "GPL-3.0"
+}
