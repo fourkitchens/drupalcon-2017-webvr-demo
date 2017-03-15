@@ -1,6 +1,9 @@
 machine:
   node:
     version: v7.7.2
+test:
+  override:
+    - "true"
 deployment:
   publish:
     branch: master
