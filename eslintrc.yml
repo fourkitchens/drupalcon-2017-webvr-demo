@@ -1,4 +1,14 @@
 extends: airbnb-base
 plugins:
   - import
+  - react
+env:
+  browser: true
+parserOptions:
+  ecmaVersion: 2015
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
 rules:
+  # This is disabled because img tags are only used as asset loaders in A-Frame.
+  jsx-a11y/img-has-alt: 0
