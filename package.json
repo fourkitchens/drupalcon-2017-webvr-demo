@@ -9,7 +9,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "npm run lint"
   },
   "contributors": [
     {
@@ -41,7 +42,7 @@
     "eslint": "^3.17.1",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-react": "^5.10.0",
     "husky": "^0.13.2",
     "last-release-git": "^0.0.2",
     "semantic-release": "^6.3.2"
