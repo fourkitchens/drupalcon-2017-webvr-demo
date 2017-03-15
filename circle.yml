@@ -9,3 +9,4 @@ deployment:
     branch: master
     commands:
       - npm run semantic-release || true
+      - npm run lint
