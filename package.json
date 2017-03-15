@@ -4,11 +4,11 @@
   "description": "WebVR DrupalCon 2017 Demo",
   "main": "index.js",
   "repository": {
-    "url": "git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
+    "url": "https:git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
     "type": "git"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "contributors": [
     {
