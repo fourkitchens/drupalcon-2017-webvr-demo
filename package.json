@@ -4,6 +4,9 @@
   "description": "WebVR DrupalCon 2017 Demo",
   "main": "index.js",
   "repository": "git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
+  "scripts": {
+    "semantic-release": "semantic-release pre && semantic-release post"
+  },
   "contributors": [
     {
       "name": "Patrick Coffey",
@@ -14,5 +17,14 @@
       "email": "joe@fourkitchens.com"
     }
   ],
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "release": {
+    "getLastRelease": "last-release-git",
+    "verifyConditions": "condition-circle"
+  },
+  "devDependencies": {
+    "condition-circle": "^1.5.0",
+    "last-release-git": "^0.0.2",
+    "semantic-release": "^6.3.2"
+  }
 }
