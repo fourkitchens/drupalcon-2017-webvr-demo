@@ -1,9 +1,12 @@
 {
   "name": "drupalcon-2017-webvr-demo",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "WebVR DrupalCon 2017 Demo",
   "main": "index.js",
-  "repository": "git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
+  "repository": {
+    "url": "git@github.com:fourkitchens/drupalcon-2017-webvr-demo.git",
+    "type": "git"
+  },
   "scripts": {
     "semantic-release": "semantic-release pre && semantic-release post"
   },
@@ -21,6 +24,12 @@
   "release": {
     "getLastRelease": "last-release-git",
     "verifyConditions": "condition-circle"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "engines": {
+    "node": ">=7.7.2"
   },
   "devDependencies": {
     "condition-circle": "^1.5.0",
