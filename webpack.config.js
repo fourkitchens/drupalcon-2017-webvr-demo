@@ -3,7 +3,12 @@
  * Contains Webpack build configuration.
  */
 
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const NODE_ENV_PRODUCTION = 'production';
+const NODE_ENV_DEVELOPMENT = 'development';
+const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : NODE_ENV_DEVELOPMENT;
 
 // Construct plugins array.
 const plugins = [];
@@ -12,6 +17,13 @@ plugins.push(new HtmlWebpackPlugin({
   inject: 'body',
   filename: 'index.html',
 }));
+
+if (NODE_ENV === NODE_ENV_PRODUCTION) {
+  plugins.push(new FaviconsWebpackPlugin({
+    logo: './src/assets/images/logo.png',
+    inject: true,
+  }));
+}
 
 // Configure loaders.
 const loaders = [

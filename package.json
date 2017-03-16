@@ -9,8 +9,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js .",
-    "build": "webpack -p",
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "precommit": "npm run lint"
   },
@@ -48,6 +48,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "favicons-webpack-plugin": "^0.0.7",
     "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.2",
