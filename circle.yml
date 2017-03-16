@@ -10,3 +10,4 @@ deployment:
     commands:
       - npm run semantic-release || true
       - npm run lint
+      - npm run build
