@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js .",
-    "start": "NODE_ENV=development webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server --host=${WEBVR_DEV_HOST_IP} --https",
     "build": "NODE_ENV=production webpack -p",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "precommit": "npm run lint"
