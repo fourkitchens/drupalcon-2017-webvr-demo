@@ -16,7 +16,7 @@ require('./styles/index.scss');
  */
 const VRScene = () => (
   <Scene>
-    <a-sky color="#ECECEC"></a-sky>
+    <a-sky color="#ECECEC" />
   </Scene>
 );
 
