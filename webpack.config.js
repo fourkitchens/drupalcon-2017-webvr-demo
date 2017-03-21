@@ -52,9 +52,7 @@ const loaders = [
  */
 const fetchIp = () => (
   new Promise((resolve, reject) => {
-    dns.lookup(os.hostname(), (error, address) => (
-      error ? reject(error) : resolve(address)
-    ));
+    dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
   })
 );
 
