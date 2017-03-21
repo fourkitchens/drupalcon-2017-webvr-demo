@@ -47,7 +47,7 @@ const loaders = [
 /**
  * Fetches and resolves this machine's IP address.
  *
- * @returns {Promise}
+ * @returns {Promise<String>}
  *   Promise that resolves this machine's IP address.
  */
 const fetchIp = () => (
