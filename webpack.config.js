@@ -3,6 +3,8 @@
  * Contains Webpack build configuration.
  */
 
+const dns = require('dns');
+const os = require('os');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -42,15 +44,34 @@ const loaders = [
   },
 ];
 
-module.exports = {
-  entry: './src/index.jsx',
-  output: {
-    path: `${__dirname}/dist`,
-    filename: 'drupalcon-vr.[hash].js',
-    publicPath: '',
-  },
-  module: {
-    loaders,
-  },
-  plugins,
-};
+/**
+ * Fetches and resolves this machine's IP address.
+ *
+ * @returns {Promise<String>}
+ *   Promise that resolves this machine's IP address.
+ */
+const fetchIp = () => (
+  new Promise((resolve, reject) => {
+    dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
+  })
+);
+
+module.exports = () => (
+  fetchIp().then(host => ({
+    entry: './src/index.jsx',
+    output: {
+      path: `${__dirname}/dist`,
+      filename: 'drupalcon-vr.[hash].js',
+      publicPath: '',
+    },
+    module: {
+      loaders,
+    },
+    devServer: {
+      host,
+    },
+    plugins,
+  })).catch((error) => {
+    throw new Error(error);
+  })
+);

@@ -15,7 +15,9 @@ require('./styles/index.scss');
  * {@inheritdoc}
  */
 const VRScene = () => (
-  <Scene>VR!</Scene>
+  <Scene>
+    <a-sky color="#ECECEC" />
+  </Scene>
 );
 
 // Render the VRSceme component in the scene container div.
