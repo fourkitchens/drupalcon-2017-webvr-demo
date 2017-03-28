@@ -8,6 +8,8 @@ import { Scene } from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Camera from './components/Camera.jsx';
+
 require('./styles/index.scss');
 
 /**
@@ -16,7 +18,8 @@ require('./styles/index.scss');
  */
 const VRScene = () => (
   <Scene>
-    <a-sky color="#ECECEC" />
+    <a-sky color="#000000" />
+    <Camera />
   </Scene>
 );
 
