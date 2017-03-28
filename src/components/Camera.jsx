@@ -10,10 +10,12 @@ import React from 'react';
  * Returns React component containing cursor and Camera.
  * {@inheritdoc}
  */
-const Camera = () => (
-  <Entity camera look-controls>
+const Camera = props => (
+  <Entity camera look-controls {...props}>
     <Entity
       cursor={{}}
+      fuse="true"
+      position="0 0 -1"
       geometry={{
         primitive: 'ring',
         radiusInner: 0.01,
@@ -26,7 +28,6 @@ const Camera = () => (
         to: '1 1 1',
         dur: '150',
       }}
-      position="0 0 -1"
       material={{
         color: 'white',
         shader: 'flat',
