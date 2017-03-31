@@ -16,3 +16,6 @@ rules:
   # This is disabled because Webpack (as far as I know) requires a file
   # extension to exist in order for it to determine imported file types.
   import/extensions: 0
+  # This is disabled because it would be silly to require file paths to
+  # variables, and then use those variables in <a-assets><img> tags.
+  global-require: 0
