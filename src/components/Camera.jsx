@@ -11,28 +11,38 @@ import React from 'react';
  * {@inheritdoc}
  */
 const Camera = props => (
-  <Entity camera look-controls {...props}>
+  <Entity
+    camera
+    look-controls {...props}
+  >
     <Entity
-      cursor={{}}
-      fuse="true"
+      cursor
+      fuse
+      fuseTimeout="250"
       position="0 0 -1"
+      color="white"
       geometry={{
         primitive: 'ring',
         radiusInner: 0.01,
         radiusOuter: 0.02,
       }}
-      animation__click={{
-        property: 'scale',
-        startEvents: 'click',
-        from: '0.1 0.1 0.1',
-        to: '1 1 1',
-        dur: '150',
-      }}
       material={{
         color: 'white',
         shader: 'flat',
       }}
-    />
+    >
+      <a-animation
+        begin="cursor-fusing"
+        easing="ease-in"
+        attribute="scale"
+        fill="forwards"
+        direction="alternate"
+        repeat="1"
+        dur="500"
+        from="1 1 1"
+        to="0.1 0.1 0.1"
+      />
+    </Entity>
   </Entity>
 );
 
