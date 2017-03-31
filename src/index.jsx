@@ -35,17 +35,22 @@ class VRScene extends React.Component {
 
   render() {
     return (
-      <Scene>
+      <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+        <a-assets>
+          <img id="sky" src={require('./assets/images/abstract.jpg')} />
+        </a-assets>
         <Camera />
 
         <a-circle
           color={this.state.color}
-          radius="5"
-          position="0 0 -10"
+          radius="1"
+          position="-90 10 -45"
+          rotation="0 90 0"
+          scale="6 6 0"
           onClick={() => this.changeColor()}
         />
 
-        <a-sky color="#000000" />
+        <a-sky src="#sky" />
       </Scene>
     );
   }
