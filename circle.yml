@@ -8,7 +8,6 @@ deployment:
   publish:
     branch: master
     commands:
-      - npm run semantic-release || true
       - npm run lint
       - git config --global user.email "patrickcoffey48@gmail.com"
       - git config --global user.name "Deployment Bot"
@@ -17,10 +16,11 @@ deployment:
       - git pull origin master
       - git checkout gh-pages
       - git pull origin gh-pages
-      - git merge master
+      - git merge master -m "Merge in for deployment"
       - rm -r dist
       - npm run build:prod
       - git add dist
       - git commit -m "Deployment"
       - git push origin gh-pages
+      - npm run semantic-release || true
 
