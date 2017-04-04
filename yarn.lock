@@ -70,11 +70,9 @@ acorn@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.2.tgz#dc1c8fb907f64db2ab573de2326b73527c24de36"
 
-aframe-react@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-3.5.0.tgz#b88df6f6d18d004e8c636ee96c2e2e8a7fecfd4d"
-  dependencies:
-    style-attr "^1.2.0"
+aframe-react@^4.0.3:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
 
 aframe@^0.5.0:
   version "0.5.0"
@@ -6571,7 +6569,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-attr@^1.0.2, style-attr@^1.2.0:
+style-attr@^1.0.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/style-attr/-/style-attr-1.2.0.tgz#a54ce15210325dce7f3831daa2b8236878919f1f"
 
