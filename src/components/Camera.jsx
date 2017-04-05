@@ -12,10 +12,12 @@ import React from 'react';
  */
 const Camera = props => (
   <Entity
+    id="camera"
     camera
     look-controls {...props}
   >
     <Entity
+      id="cursor"
       cursor
       fuse
       fuseTimeout="250"
@@ -31,7 +33,8 @@ const Camera = props => (
         shader: 'flat',
       }}
     >
-      <a-animation
+      <Entity
+        primative="a-animation"
         begin="cursor-fusing"
         easing="ease-in"
         attribute="scale"
