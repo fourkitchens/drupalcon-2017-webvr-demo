@@ -4,57 +4,28 @@
  */
 
 import 'aframe';
-import { Scene } from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
-import Camera from './components/Camera.jsx';
+import NoMatch from './components/scenes/NoMatch.jsx';
+import { SuzyOne, SuzyTwo } from './components/scenes/Suzy.jsx';
 
 require('./styles/index.scss');
 
 /**
- * Returns an empty scene (for now).
+ * Renders a scene that allows useres to navigate to other scenes.
  * {@inheritdoc}
  */
-class VRScene extends React.Component {
-  /**
-   * Constructs this component.
-   */
-  constructor(props) {
-    super(props);
-    this.state = { color: 'red' };
-  }
+const NavigationScene = () => (
+  <HashRouter>
+    <div>
+      <Route path="/suzy/one" component={SuzyOne} />
+      <Route path="/suzy/two" component={SuzyTwo} />
+      <Route component={NoMatch} />
+    </div>
+  </HashRouter>
+);
 
-  /**
-   * Changes the color state property to a random color.
-   */
-  changeColor() {
-    const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
-    this.setState({ color: colors[Math.floor(Math.random() * colors.length)] });
-  }
-
-  render() {
-    return (
-      <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
-        <a-assets>
-          <img id="sky" src={require('./assets/images/abstract.jpg')} />
-        </a-assets>
-        <Camera />
-
-        <a-circle
-          color={this.state.color}
-          radius="1"
-          position="-90 10 -45"
-          rotation="0 90 0"
-          scale="6 6 0"
-          onClick={() => this.changeColor()}
-        />
-
-        <a-sky src="#sky" />
-      </Scene>
-    );
-  }
-}
-
-// Render the VRSceme component in the scene container div.
-ReactDOM.render(<VRScene />, document.querySelector('.application-container'));
+// Render the NavigationScene component in the scene container div.
+ReactDOM.render(<NavigationScene />, document.querySelector('.application-container'));
