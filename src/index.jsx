@@ -20,7 +20,7 @@ require('./styles/index.scss');
 const NavigationScene = () => (
   <HashRouter>
     <div>
-      <Route exact path="/" component={SuzyOne} />
+      <Route path="/suzy/one" component={SuzyOne} />
       <Route path="/suzy/two" component={SuzyTwo} />
       <Route component={NoMatch} />
     </div>
