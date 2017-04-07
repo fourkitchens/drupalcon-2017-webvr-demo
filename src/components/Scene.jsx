@@ -1,5 +1,5 @@
 /**
- * @file Scene.js
+ * @file Scene.jsx
  * Exports a custom, configurable scene.
  */
 

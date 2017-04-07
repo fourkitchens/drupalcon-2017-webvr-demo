@@ -7,6 +7,7 @@ import { Entity } from 'aframe-react';
 import React from 'react';
 
 import Scene from '../Scene.jsx';
+import Link from '../Link.jsx';
 
 /**
  * Returns React component that render's Suzy Bate's initial scene.
@@ -30,6 +31,7 @@ const NoMatch = () => (
       }}
     />
 
+    <Link to="/suzy/one" />
     <Entity primitive="a-sky" src="#sky" />
   </Scene>
 );

@@ -19,3 +19,6 @@ rules:
   # This is disabled because it would be silly to require file paths to
   # variables, and then use those variables in <a-assets><img> tags.
   global-require: 0
+  # React eslint currently doesn't understand deconstruction. So, applying props
+  # like this fails: {...this.props}.
+  react/no-unused-prop-types: 0
