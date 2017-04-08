@@ -55,10 +55,10 @@ const loaders = [
 const fetchIp = () => (
   new Promise((resolve, reject) => {
     if (DEVELOPMENT_SERVER_IP) {
-      return resolve(DEVELOPMENT_SERVER_IP);
+      resolve(DEVELOPMENT_SERVER_IP);
+    } else {
+      dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
     }
-
-    dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
   })
 );
 
@@ -75,7 +75,7 @@ module.exports = () => (
     },
     devServer: {
       host,
-      port: DEVELOPMENT_SERVER_PORT ? DEVELOPMENT_SERVER_PORT : '8080'
+      port: DEVELOPMENT_SERVER_PORT || '8080',
     },
     plugins,
   })).catch((error) => {
