@@ -1,5 +1,5 @@
 /**
- * @file Camera.js
+ * @file Camera.jsx
  * Exports camera component.
  */
 
@@ -33,8 +33,7 @@ const Camera = props => (
         shader: 'flat',
       }}
     >
-      <Entity
-        primative="a-animation"
+      <a-animation
         begin="cursor-fusing"
         easing="ease-in"
         attribute="scale"
