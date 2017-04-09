@@ -8,6 +8,7 @@ import React from 'react';
 
 import Scene from '../Scene.jsx';
 import Link from '../Link.jsx';
+import SoundHotspot from '../SoundHotspot.jsx';
 
 /**
  * Returns React component that render's Suzy Bate's initial scene.
@@ -32,6 +33,7 @@ const NoMatch = () => (
     />
 
     <Link to="/suzy/one" />
+    <SoundHotspot mp3={require('../../assets/sounds/can-open.mp3')} />
     <Entity primitive="a-sky" src="#sky" />
   </Scene>
 );
