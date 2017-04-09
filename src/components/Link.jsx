@@ -15,7 +15,10 @@ const Link = (props, context) => {
       {...props}
       radius="1"
       position="0 0 -10"
-      onClick={() => history.push(props.to)}
+      onClick={() => {
+        document.querySelector('a-scene').exitVR();
+        history.push(props.to);
+      }}
     />
   );
 };
