@@ -18,6 +18,13 @@ This project uses Eslint, configured to use AirBnb's standard set. To lint code 
 ### Development server
 This project uses Webpack to generate builds, and set up development instances. To run a development server, run `npm run start`, and then in your browser navigate to `https://{your_ip_address}:8080`. This server has hot-reloading enabled, so you shouldn't ever need to manually re-fresh your browser. You'll need to tell Chrome or whatever browser you're using that using https with no cert is OK. We need to pretend like we have https set up so that Chrome Beta, while in VR mode, doesn't crash (See the Developing in Google Daydream section).
 
+#### Configuring the development server
+The development server in this repository shouldn't need configuration to run correctly, but if you want to run the server on a specific o[ or port, you can set these two environment variables:
+```bash
+export DEVELOPMENT_SERVER_IP="localhost"
+export DEVELOPMENT_SERVER_PORT="3000"
+```
+
 #### Developing in Google Daydream
 The development server in this project is set up so that it can be accessed by any device on your local network. That's why you access your development instance from your local IP instead of just `localhost`.
 

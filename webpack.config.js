@@ -11,6 +11,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NODE_ENV_PRODUCTION = 'production';
 const NODE_ENV_DEVELOPMENT = 'development';
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : NODE_ENV_DEVELOPMENT;
+const DEVELOPMENT_SERVER_IP = process.env.DEVELOPMENT_SERVER_IP || false;
+const DEVELOPMENT_SERVER_PORT = process.env.DEVELOPMENT_SERVER_PORT || false;
 
 // Construct plugins array.
 const plugins = [];
@@ -52,7 +54,11 @@ const loaders = [
  */
 const fetchIp = () => (
   new Promise((resolve, reject) => {
-    dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
+    if (DEVELOPMENT_SERVER_IP) {
+      resolve(DEVELOPMENT_SERVER_IP);
+    } else {
+      dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
+    }
   })
 );
 
@@ -69,6 +75,7 @@ module.exports = () => (
     },
     devServer: {
       host,
+      port: DEVELOPMENT_SERVER_PORT || '8080',
     },
     plugins,
   })).catch((error) => {
