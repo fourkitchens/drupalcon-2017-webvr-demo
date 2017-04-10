@@ -9,7 +9,7 @@ import React from 'react';
  * Link hot spot that, when clicked, navigates the user to a different scene.
  */
 const Link = props => (
-  <a-circle
+  <a-box
     onClick={() => {
       window.location.hash = props.to;
     }}
@@ -22,7 +22,7 @@ Link.propTypes = {
   id: React.PropTypes.string,
   to: React.PropTypes.string,
   position: React.PropTypes.string,
-  radius: React.PropTypes.number,
+  src: React.PropTypes.string,
 };
 
 Link.defaultProps = {
@@ -30,7 +30,7 @@ Link.defaultProps = {
   id: 'hotspot',
   to: '#',
   position: '0 0 -10',
-  radius: 1,
+  src: require('../assets/images/visit-link.png'),
 };
 
 export default Link;

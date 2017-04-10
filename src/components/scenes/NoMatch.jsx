@@ -6,6 +6,8 @@
 import { Entity } from 'aframe-react';
 import React from 'react';
 
+import Link from '../Link.jsx';
+
 /**
  * Returns React component that render's a 404 Not Found scene.
  * {@inheritdoc}
@@ -26,6 +28,8 @@ const NoMatch = {
           font: 'roboto',
         }}
       />
+
+      <Link to="#" />
     </Entity>
   ),
 };

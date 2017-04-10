@@ -26,20 +26,17 @@ class NavigationScene extends React.Component {
     super(props);
 
     // Collect all scenes into an iterable object.
-    this.state = {
-      currentScene: 'suzy-back-yard',
-      scenes: [SuzyOne, NoMatch],
-    };
+    this.state = {};
+    this.state.scenes = [SuzyOne, NoMatch];
+    this.state.initialScene = this.fetchSceneByName('suzy-back-yard');
+    this.state.currentScene = this.fetchSceneByUrl();
   }
 
   /**
    * When the window hash changes, adjust the current scene.
    */
   componentDidMount() {
-    window.onhashchange = () => {
-      const name = location.hash.replace('#', '');
-      this.switchCurrentScene(name);
-    };
+    window.onhashchange = () => this.switchCurrentScene(this.fetchSceneByUrl());
   }
 
   /**
@@ -49,9 +46,9 @@ class NavigationScene extends React.Component {
    *   String containing the name of the scene that should returned.
    *
    * @returns {object}
-   *   Object with scene data for the specified scene ID.
+   *   Object with scene data for the specified scene name.
    */
-  fetchScene(name) {
+  fetchSceneByName(name) {
     const newScene = this.state.scenes.find(scene => scene.name === name);
 
     // If no scene was found, return the 404 not found scene.
@@ -75,15 +72,32 @@ class NavigationScene extends React.Component {
   }
 
   /**
+   * Fetches current scene based on URL
+   *
+   * @returns {object}
+   *   Object with scene data from the name specified in the URL, or 404 if no
+   *   scene is found.
+   */
+  fetchSceneByUrl() {
+    let name = window.location.hash.replace('#', '');
+
+    // If the name is empty, the initial scene should be returned.
+    if (name.length <= 0) {
+      name = this.state.initialScene.name;
+    }
+
+    return this.fetchSceneByName(name);
+  }
+
+  /**
    * Switches the current scene to another scene.
    *
-   * @param {string} name
-   *   String containing the name of the scene that should be loaded.
+   * @param {object} scene
+   *   Scene object that should become the current scene.
    */
-  switchCurrentScene(name) {
-    const newScene = this.fetchScene(name);
+  switchCurrentScene(scene) {
     this.setState({
-      currentScene: newScene.name,
+      currentScene: scene,
     });
   }
 
@@ -91,10 +105,10 @@ class NavigationScene extends React.Component {
     return (
       <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
-        <Entity primitive="a-sky" src={`#${this.state.currentScene}`} />
+        <Entity primitive="a-sky" src={`#${this.state.currentScene.name}`} />
         <Camera />
 
-        {this.fetchScene(this.state.currentScene).scene()}
+        {this.state.currentScene.scene()}
       </Scene>
     );
   }
