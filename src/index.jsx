@@ -10,7 +10,7 @@ import { Scene, Entity } from 'aframe-react';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
-import { SuzyOne } from './components/scenes/Suzy.jsx';
+import SuzyOne from './components/scenes/Suzy.jsx';
 
 require('./styles/index.scss');
 

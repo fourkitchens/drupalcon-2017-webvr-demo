@@ -21,4 +21,4 @@ const SuzyOne = {
   ),
 };
 
-export { SuzyOne };
+export default SuzyOne;
