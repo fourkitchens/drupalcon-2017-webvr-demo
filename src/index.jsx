@@ -27,8 +27,18 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {
-      currentScene: 'no-match',
+      currentScene: 'suzy-front-house',
       scenes: [SuzyOne, SuzyTwo, NoMatch],
+    };
+  }
+
+  /**
+   * When the window hash changes, adjust the current scene.
+   */
+  componentDidMount() {
+    window.onhashchange = () => {
+      const name = location.hash.replace('#', '');
+      this.switchCurrentScene(name);
     };
   }
 
@@ -44,8 +54,9 @@ class NavigationScene extends React.Component {
   fetchScene(name) {
     const newScene = this.state.scenes.find(scene => scene.name === name);
 
+    // If no scene was found, return the 404 not found scene.
     if (!newScene) {
-      throw new Error(`Cannot load scene "${name}", it has not been defined.`);
+      return { name: 'no-match' };
     }
 
     return newScene;
@@ -72,7 +83,7 @@ class NavigationScene extends React.Component {
   switchCurrentScene(name) {
     const newScene = this.fetchScene(name);
     this.setState({
-      currentScene: newScene,
+      currentScene: newScene.name,
     });
   }
 
