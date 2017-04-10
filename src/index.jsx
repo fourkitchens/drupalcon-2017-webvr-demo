@@ -10,7 +10,7 @@ import { Scene, Entity } from 'aframe-react';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
-import { SuzyOne, SuzyTwo } from './components/scenes/Suzy.jsx';
+import { SuzyOne } from './components/scenes/Suzy.jsx';
 
 require('./styles/index.scss');
 
@@ -27,8 +27,8 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {
-      currentScene: 'suzy-front-house',
-      scenes: [SuzyOne, SuzyTwo, NoMatch],
+      currentScene: 'suzy-back-yard',
+      scenes: [SuzyOne, NoMatch],
     };
   }
 

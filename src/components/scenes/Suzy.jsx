@@ -12,22 +12,13 @@ import Link from '../Link.jsx';
  * Returns React component that render's Suzy Bate's initial scene.
  */
 const SuzyOne = {
-  name: 'suzy-front-house',
-  sky: require('../../assets/images/scenes/suzy-front-house.png'),
+  name: 'suzy-back-yard',
+  sky: require('../../assets/images/scenes/suzy-back-yard.jpg'),
   scene: () => (
     <Entity>
-      <Link to={'suzy-back-house'} />
+      <Link to={'no-match'} />
     </Entity>
   ),
 };
 
-/**
- * Returns React component that render's Suzy Bate's second scene.
- */
-const SuzyTwo = {
-  name: 'suzy-back-house',
-  sky: require('../../assets/images/scenes/suzy-backyard-shed.png'),
-  scene: () => '',
-};
-
-export { SuzyOne, SuzyTwo };
+export { SuzyOne };
