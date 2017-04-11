@@ -8,36 +8,34 @@ import React, { PropTypes } from 'react';
 /**
  * Link hot spot that, when clicked, navigates the user to a different scene.
  */
-const Link = (props, context) => {
-  const { history } = context.router;
-  return (
-    <a-circle
-      {...props}
-      radius="1"
-      position="0 0 -10"
-      onClick={() => history.push(props.to)}
-    />
-  );
-};
+const Link = props => (
+  <a-box
+    onClick={() => {
+      window.location.hash = props.to;
+    }}
+    {...props}
+    position={`${props.position.x} ${props.position.y} ${props.position.z}`}
+  />
+);
 
 Link.propTypes = {
-  color: React.PropTypes.string,
-  id: React.PropTypes.string,
-  to: React.PropTypes.string,
+  color: PropTypes.string,
+  id: PropTypes.string,
+  to: PropTypes.string,
+  src: PropTypes.string,
+  position: PropTypes.shape({
+    x: PropTypes.integer,
+    y: PropTypes.integer,
+    z: PropTypes.integer,
+  }),
 };
 
 Link.defaultProps = {
   color: '#35AA4E',
   id: 'hotspot',
-  to: '/',
-};
-
-Link.contextTypes = {
-  router: PropTypes.shape({
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }).isRequired,
-  }),
+  to: '#',
+  position: { x: 0, y: 0, z: -10 },
+  src: require('../assets/images/visit-link.png'),
 };
 
 export default Link;

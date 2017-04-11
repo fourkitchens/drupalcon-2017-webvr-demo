@@ -6,34 +6,32 @@
 import { Entity } from 'aframe-react';
 import React from 'react';
 
-import Scene from '../Scene.jsx';
 import Link from '../Link.jsx';
 
 /**
- * Returns React component that render's Suzy Bate's initial scene.
+ * Returns React component that render's a 404 Not Found scene.
  * {@inheritdoc}
  */
-const NoMatch = () => (
-  <Scene>
-    <Entity primative="a-assets">
-      <img id="sky" src={require('../../assets/images/no-match.png')} />
+const NoMatch = {
+  name: 'no-match',
+  sky: require('../../assets/images/no-match.png'),
+  scene: () => (
+    <Entity>
+      <Entity
+        id="text__no-match"
+        position="12 20 -30"
+        font="roboto"
+        text={{
+          value: 'We found nothing for this path :(',
+          color: '#000000',
+          width: 65,
+          font: 'roboto',
+        }}
+      />
+
+      <Link to="#" />
     </Entity>
-
-    <Entity
-      id="text__no-match"
-      position="12 20 -30"
-      font="roboto"
-      text={{
-        value: 'We found nothing for this path :(',
-        color: '#000000',
-        width: 65,
-        font: 'roboto',
-      }}
-    />
-
-    <Link to="/suzy/one" />
-    <Entity primitive="a-sky" src="#sky" />
-  </Scene>
-);
+  ),
+};
 
 export default NoMatch;
