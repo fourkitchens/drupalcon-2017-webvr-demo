@@ -31,7 +31,7 @@ The development server in this project is set up so that it can be accessed by a
 To access your dev server from your Google Pixel, simply navigate to `https://{your_ip_address}:8080` in Chrome Beta, and then tap the "VR" icon in the lower right hand corner of the page. This will start the VR initialization screen, which will open this app once the initialization is complete. Please note that the hot reloading functionality of WebPack Dev Server currently crashes WebGL in Chrome Beta. Hopefully the Chrome team will fix this soon. Also you should be aware, Chrome WebVR is relatively unstable. You're going to experience crashes that may have little or nothing to do with this app.
 
 ### Building and Deploying.
-As aforementioned, this project uses Webpack to generate builds, and production builds are placed into the `dist` folder. To generate a build, run `npm run build:prod`.
+As aforementioned, this project uses Webpack to generate builds, and production builds are placed into the `dist` folder. To generate a build, run `npm run build:prod`. Deployments happen automatically via CircleCI.
 
 ### Testing
 ... is still in the works :)
