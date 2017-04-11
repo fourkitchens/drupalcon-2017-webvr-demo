@@ -3,7 +3,7 @@
  * Exports a SoundHotspot component.
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 /**
  * SoundHotspot that, when clicked, plays a sound.
@@ -12,25 +12,35 @@ const SoundHotspot = props => (
   <a-box
     sound={`src: url(${props.mp3}); on: click`}
     {...props}
+    position={`${props.position.x} ${props.position.y} ${props.position.z}`}
+    rotation={`${props.rotation.x} ${props.rotation.y} ${props.rotation.z}`}
   />
 );
 
 SoundHotspot.propTypes = {
-  id: React.PropTypes.string,
-  mp3: React.PropTypes.string.isRequired,
-  src: React.PropTypes.string,
-  position: React.PropTypes.string,
-  rotation: React.PropTypes.string,
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  depth: React.PropTypes.number,
+  id: PropTypes.string,
+  mp3: PropTypes.string.isRequired,
+  src: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  depth: PropTypes.number,
+  position: PropTypes.shape({
+    x: PropTypes.integer,
+    y: PropTypes.integer,
+    z: PropTypes.integer,
+  }),
+  rotation: PropTypes.shape({
+    x: PropTypes.integer,
+    y: PropTypes.integer,
+    z: PropTypes.integer,
+  }),
 };
 
 SoundHotspot.defaultProps = {
   id: 'sound-hotspot',
   src: require('../assets/images/play-sound.png'),
-  position: '-10 0 0',
-  rotation: '0 80 0',
+  position: { x: 10, y: 0, z: -10 },
+  rotation: { x: 0, y: 0, z: 0 },
   width: 1,
   height: 1,
   depth: 0,
