@@ -3,37 +3,37 @@
  * Exports a SoundHotspot component.
  */
 
-import React, { PropTypes } from 'react';
-import { Entity } from 'aframe-react';
+import React from 'react';
 
 /**
  * SoundHotspot that, when clicked, plays a sound.
  */
-const SoundHotspot = props =>
-  (<Entity
-    {...props}
-    id={props.id}
-    geometry={{ primitive: 'box' }}
-    material={{ src: props.image }}
+const SoundHotspot = props => (
+  <a-box
     sound={`src: url(${props.mp3}); on: click`}
-    position={{ x: -10, y: 0, z: 0 }}
-  />);
+    {...props}
+  />
+);
 
 SoundHotspot.propTypes = {
   id: React.PropTypes.string,
   mp3: React.PropTypes.string.isRequired,
-  image: React.PropTypes.string,
-  position: PropTypes.shape({
-    x: React.PropTypes.integer,
-    y: React.PropTypes.integer,
-    z: React.PropTypes.integer,
-  }),
+  src: React.PropTypes.string,
+  position: React.PropTypes.string,
+  rotation: React.PropTypes.string,
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+  depth: React.PropTypes.number,
 };
 
 SoundHotspot.defaultProps = {
   id: 'sound-hotspot',
-  image: require('../assets/images/play-sound.png'),
-  position: { x: -10, y: 0, z: 0 },
+  src: require('../assets/images/play-sound.png'),
+  position: '-10 0 0',
+  rotation: '0 80 0',
+  width: 1,
+  height: 1,
+  depth: 0,
 };
 
 export default SoundHotspot;
