@@ -70,6 +70,10 @@ acorn@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.2.tgz#dc1c8fb907f64db2ab573de2326b73527c24de36"
 
+aframe-href-component@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/aframe-href-component/-/aframe-href-component-0.5.1.tgz#3cd46aa34089f551546891178e33c47b4265b6a5"
+
 aframe-react@^4.0.3:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
