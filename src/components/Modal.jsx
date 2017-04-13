@@ -3,7 +3,7 @@
  * Exports a Modal component
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Entity } from 'aframe-react';
 
 /**
@@ -15,6 +15,7 @@ class Modal extends React.Component {
 
     this.state = {
       position: { x: 0, y: 0, z: -1 },
+      visible: true,
     };
   }
 
@@ -32,17 +33,64 @@ class Modal extends React.Component {
     });
   }
 
+  toggleVisibility() {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  }
+
   render() {
     return (
-      <Entity
-        primitive="a-box"
-        width="1"
-        height="0.5"
-        position={this.state.position}
-        background="#ffffff"
-      />
+      <Entity position={this.state.position}>
+        <a-circle
+          radius="0.05"
+          position="0.45 0.22 0.1"
+          src={require('../assets/images/close-entity.png')}
+          onClick={() => this.toggleVisibility()}
+        />
+        <Entity
+          primitive="a-box"
+          visible={this.state.visible || false}
+          depth="0"
+          width="1"
+          height="0.5"
+        >
+          <a-circle
+            radius="0.05"
+            position="0.45 0.22 0.1"
+            src={require('../assets/images/close-entity.png')}
+            onClick={() => this.toggleVisibility()}
+          />
+          <Entity
+            primitive="a-text"
+            color="#000000"
+            value={this.props.title}
+            width="1"
+            height="0.5"
+            position="-0.48 0.2 0"
+          />
+          <Entity
+            primitive="a-text"
+            color="#000000"
+            value={this.props.content}
+            width="1"
+            height="0.5"
+            position="-0.48 -0.05 0"
+          />
+        </Entity>
+      </Entity>
     );
   }
 }
+
+Modal.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+};
+
+Modal.defaultProps = {
+  title: 'Please give me a title :)',
+  content: 'Please give me some content :)',
+};
 
 export default Modal;

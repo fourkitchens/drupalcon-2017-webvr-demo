@@ -6,8 +6,6 @@
 import { Entity } from 'aframe-react';
 import React from 'react';
 
-import Link from '../Link.jsx';
-import SoundHotspot from '../SoundHotspot.jsx';
 import Modal from '../Modal.jsx';
 
 /**
@@ -31,8 +29,6 @@ const NoMatch = {
         }}
       />
 
-      <SoundHotspot mp3={require('../../assets/sounds/can-open.mp3')} />
-      <Link to="#" />
       <Modal
         title="This is a wonderful modal!"
         content={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -41,8 +37,6 @@ const NoMatch = {
         per inceptos himenaeos.`}
         to="#"
       />
-
-
     </Entity>
   ),
 };
