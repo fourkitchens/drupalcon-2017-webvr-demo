@@ -30,7 +30,7 @@ const NoMatch = {
       />
 
       <Modal
-        title="This is a wonderful modal!"
+        title="Hey, how are you doing?"
         content={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed consequat tortor congue quam sollicitudin sagittis.
         Class aptent taciti sociosqu ad litora torquent per conubia nostra,
