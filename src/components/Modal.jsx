@@ -43,6 +43,17 @@ class Modal extends React.Component {
   }
 
   /**
+   * Handles action button clicks/fuses.
+   */
+  handleAction() {
+    if (this.props.to.length > 0) {
+      window.location.hash = this.props.to;
+    } else {
+      this.toggleVisibility();
+    }
+  }
+
+  /**
    * Renders this component.
    */
   render() {
@@ -116,26 +127,16 @@ class Modal extends React.Component {
             width="1"
             height="0.5"
             position="1.7 -1.5 0"
-            onClick={() => {
-              if (this.props.to.length > 0) {
-                window.location.hash = this.props.to;
-              } else {
-                this.toggleVisibility();
-              }
-            }}
+            onClick={() => this.handleAction()}
           >
-            <Entity
+            <a-text
               id={`${this.props.id}-action-text`}
-              primitive="a-text"
               color="#FFFFFF"
               value={this.props.actionText}
               width="3"
               height="0.5"
-              position={{
-                x: -0.60,
-                y: 0.38,
-                z: 1.1,
-              }}
+              onClick={() => this.handleAction()}
+              position="-0.60 0.38 1.1"
             />
           </a-box>
         </Entity>
