@@ -5,16 +5,19 @@
 
 import React, { PropTypes } from 'react';
 
+require('aframe-look-at-component');
+
 /**
  * Link hot spot that, when clicked, navigates the user to a different scene.
  */
 const Link = props => (
-  <a-box
+  <a-circle
     onClick={() => {
       window.location.hash = props.to;
     }}
     {...props}
     position={`${props.position.x} ${props.position.y} ${props.position.z}`}
+    look-at="#camera"
   />
 );
 

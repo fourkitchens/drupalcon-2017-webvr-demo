@@ -70,17 +70,13 @@ acorn@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.2.tgz#dc1c8fb907f64db2ab573de2326b73527c24de36"
 
-aframe-draw-component@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/aframe-draw-component/-/aframe-draw-component-1.5.0.tgz#3e1eb635370c224074203309ce61476fc5c26229"
+aframe-look-at-component@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/aframe-look-at-component/-/aframe-look-at-component-0.2.0.tgz#070c82b137fb9253d2be0e4cb8d2638a6ce99dd9"
 
 aframe-react@^4.0.3:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
-
-aframe-textwrap-component@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/aframe-textwrap-component/-/aframe-textwrap-component-1.0.1.tgz#760998978d36b46873414421c4e71a4422cdd8fc"
 
 aframe@^0.5.0:
   version "0.5.0"
