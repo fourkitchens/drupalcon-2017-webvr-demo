@@ -7,6 +7,8 @@ import { Entity } from 'aframe-react';
 import React from 'react';
 
 import Modal from '../Modal.jsx';
+import Sound from '../Sound.jsx';
+import Link from '../Link.jsx';
 
 /**
  * Returns React component that render's a 404 Not Found scene.
@@ -37,6 +39,10 @@ const NoMatch = {
         per inceptos himenaeos.`}
         to="#"
       />
+
+      <Link to="#" position={{ x: 20, y: 0, z: -10 }} />
+
+      <Sound mp3={require('../../assets/sounds/can-open.mp3')} position={{ x: -20, y: 0, z: -10 }} />
     </Entity>
   ),
 };
