@@ -20,6 +20,7 @@ const NoMatch = {
   scene: () => (
     <Entity>
       <Modal
+        visible
         title="404, not found!"
         content={['The scene you are looking for does not exist.',
           'We\'re so sorry! We\'ll notice this in our analytics, and',
