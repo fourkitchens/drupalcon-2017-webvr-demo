@@ -77,8 +77,7 @@ class Modal extends React.Component {
       <Entity id={this.props.id}>
         <a-circle
           id={`${this.props.id}-hotspot`}
-          radius="0.3"
-          src={require('../assets/images/visit-link.jpg')}
+          src={require('../assets/images/open-modal.jpg')}
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
