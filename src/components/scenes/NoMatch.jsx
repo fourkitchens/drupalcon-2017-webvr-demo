@@ -32,12 +32,13 @@ const NoMatch = {
       />
 
       <Modal
-        title="Hey, how are you doing?"
-        content={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Sed consequat tortor congue quam sollicitudin sagittis.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-        per inceptos himenaeos.`}
+        visible
+        title="404, not found!"
+        content={['The scene you are looking for does not exist.',
+          'We\'re so sorry! We\'ll notice this in our analytics, and',
+          'resolve the issue :) Thanks for exploring our VR scenes!'].join(' ')}
         to="#"
+        image={require('../../assets/images/404-cuteness.jpg')}
       />
 
       <Link to="#" position={{ x: 20, y: 0, z: -10 }} />
