@@ -3,10 +3,11 @@
  * Entry file for this application.
  */
 
-import 'aframe';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import aframe from 'aframe';
 import { Scene, Entity } from 'aframe-react';
+import registerClickDrag from 'aframe-click-drag-component';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
@@ -14,6 +15,8 @@ import SuzyOne from './components/scenes/Suzy-backyard.jsx';
 import SuzyTwo from './components/scenes/Suzy-office.jsx';
 
 require('./styles/index.scss');
+
+registerClickDrag(aframe);
 
 /**
  * Scene that handles navigation.
@@ -29,7 +32,7 @@ class NavigationScene extends React.Component {
     // Collect all scenes into an iterable object.
     this.state = {};
     this.state.scenes = [SuzyOne, SuzyTwo, NoMatch];
-    this.state.initialScene = this.fetchSceneByName('suzy-back-yard');
+    this.state.initialScene = this.fetchSceneByName('suzy-office');
     this.state.currentScene = this.fetchSceneByUrl();
   }
 
@@ -106,7 +109,7 @@ class NavigationScene extends React.Component {
     return (
       <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
-        <Entity primitive="a-sky" src={`#${this.state.currentScene.name}`} />
+        <Entity primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
         <Camera />
 
         {this.state.currentScene.scene()}

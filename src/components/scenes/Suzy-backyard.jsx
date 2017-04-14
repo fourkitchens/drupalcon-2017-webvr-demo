@@ -13,7 +13,7 @@ import Sound from '../Sound.jsx';
  * Returns React component that render's Suzy Bate's initial scene.
  */
 const SuzyOne = {
-  name: 'suzy-back-yard',
+  name: 'suzy-backyard',
   sky: require('../../assets/images/scenes/suzy-back-yard.jpg'),
   scene: () => (
     <Entity>
