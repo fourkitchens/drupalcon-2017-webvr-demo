@@ -45,7 +45,7 @@ class Modal extends React.Component {
   /**
    * Handles action button clicks/fuses.
    */
-  handleAction() {
+  handleActionButtonClick() {
     if (this.props.to.length > 0) {
       window.location.hash = this.props.to;
     } else {
@@ -127,7 +127,7 @@ class Modal extends React.Component {
             width="1"
             height="0.5"
             position="1.7 -1.5 0"
-            onClick={() => this.handleAction()}
+            onClick={() => this.handleActionButtonClick()}
           >
             <a-text
               id={`${this.props.id}-action-text`}
@@ -135,7 +135,7 @@ class Modal extends React.Component {
               value={this.props.actionText}
               width="3"
               height="0.5"
-              onClick={() => this.handleAction()}
+              onClick={() => this.handleActionButtonClick()}
               position="-0.60 0.38 1.1"
             />
           </a-box>
