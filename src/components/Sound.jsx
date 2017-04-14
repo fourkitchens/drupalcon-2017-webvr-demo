@@ -1,23 +1,25 @@
 /**
- * @file SoundHotspot.jsx
- * Exports a SoundHotspot component.
+ * @file Sound.jsx
+ * Exports a Sound hotspot component.
  */
 
 import React, { PropTypes } from 'react';
 
+require('aframe-look-at-component');
+
 /**
- * SoundHotspot that, when clicked, plays a sound.
+ * Sound hotspot that, when clicked, plays a sound.
  */
-const SoundHotspot = props => (
-  <a-box
+const Sound = props => (
+  <a-circle
     sound={`src: url(${props.mp3}); on: click`}
     {...props}
     position={`${props.position.x} ${props.position.y} ${props.position.z}`}
-    rotation={`${props.rotation.x} ${props.rotation.y} ${props.rotation.z}`}
+    look-at="#camera"
   />
 );
 
-SoundHotspot.propTypes = {
+Sound.propTypes = {
   id: PropTypes.string,
   mp3: PropTypes.string.isRequired,
   src: PropTypes.string,
@@ -29,21 +31,15 @@ SoundHotspot.propTypes = {
     y: PropTypes.integer,
     z: PropTypes.integer,
   }),
-  rotation: PropTypes.shape({
-    x: PropTypes.integer,
-    y: PropTypes.integer,
-    z: PropTypes.integer,
-  }),
 };
 
-SoundHotspot.defaultProps = {
+Sound.defaultProps = {
   id: 'sound-hotspot',
   src: require('../assets/images/play-sound.png'),
   position: { x: 10, y: 0, z: -10 },
-  rotation: { x: 0, y: 0, z: 0 },
   width: 1,
   height: 1,
   depth: 0,
 };
 
-export default SoundHotspot;
+export default Sound;

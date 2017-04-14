@@ -6,8 +6,9 @@
 import { Entity } from 'aframe-react';
 import React from 'react';
 
+import Modal from '../Modal.jsx';
+import Sound from '../Sound.jsx';
 import Link from '../Link.jsx';
-import SoundHotspot from '../SoundHotspot.jsx';
 
 /**
  * Returns React component that render's a 404 Not Found scene.
@@ -30,8 +31,18 @@ const NoMatch = {
         }}
       />
 
-      <SoundHotspot mp3={require('../../assets/sounds/can-open.mp3')} />
-      <Link to="#" />
+      <Modal
+        title="Hey, how are you doing?"
+        content={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed consequat tortor congue quam sollicitudin sagittis.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+        per inceptos himenaeos.`}
+        to="#"
+      />
+
+      <Link to="#" position={{ x: 20, y: 0, z: -10 }} />
+
+      <Sound mp3={require('../../assets/sounds/can-open.mp3')} position={{ x: -20, y: 0, z: -10 }} />
     </Entity>
   ),
 };

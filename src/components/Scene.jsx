@@ -15,7 +15,7 @@ import Camera from './Camera.jsx';
 class Scene extends AframeScene {
   render() {
     return (
-      <AframeScene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+      <AframeScene inspector={{ url: 'https://aframe.io/releases/0.3.2/aframe-inspector.min.js' }}>
         <Camera />
         {this.props.children}
       </AframeScene>
