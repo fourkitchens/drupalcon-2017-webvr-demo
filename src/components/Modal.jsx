@@ -25,7 +25,6 @@ class Modal extends React.Component {
       height: 2,
       width: 4,
       textOffset: -1.1,
-      hotspotSrc: require('../assets/images/visit-link.jpg'),
     };
 
     if (props.image.length > 0) {
@@ -38,14 +37,8 @@ class Modal extends React.Component {
    * Toggles the visibility of the modal attached to the hot spot.
    */
   toggleVisibility() {
-    let src = require('../assets/images/visit-link.jpg');
-    if (this.state.visible === false) {
-      src = require('../assets/images/close-entity.jpg');
-    }
-
     this.setState({
       visible: !this.state.visible,
-      hotspotSrc: src,
     });
   }
 
@@ -74,7 +67,7 @@ class Modal extends React.Component {
         <a-circle
           id={`${this.props.id}-hotspot`}
           radius="0.3"
-          src={this.state.hotspotSrc}
+          src={require('../assets/images/visit-link.jpg')}
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
@@ -82,10 +75,11 @@ class Modal extends React.Component {
         />
         <Entity
           id={`${this.props.id}-box`}
-          ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           primitive="a-box"
+          ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           visible={this.state.visible || false}
-          depth="0"
+          depth="0.1"
+          color="#284760"
           width={this.state.width}
           height={this.state.height}
         >
@@ -93,7 +87,7 @@ class Modal extends React.Component {
           <Entity
             id={`${this.props.id}-title`}
             primitive="a-text"
-            color="#000000"
+            color="#FFFFFF"
             value={this.props.title}
             width="5.5"
             height="2"
@@ -106,7 +100,7 @@ class Modal extends React.Component {
           <Entity
             id={`${this.props.id}-content`}
             primitive="a-text"
-            color="#000000"
+            color="#FFFFFF"
             value={this.props.content}
             width="3.5"
             position={{
@@ -115,6 +109,35 @@ class Modal extends React.Component {
               z: 0.1,
             }}
           />
+          <a-box
+            id={`${this.props.id}-action`}
+            color="#284760"
+            depth="0.3"
+            width="1"
+            height="0.5"
+            position="1.7 -1.5 0"
+            onClick={() => {
+              if (this.props.to.length > 0) {
+                window.location.hash = this.props.to;
+              } else {
+                this.toggleVisibility();
+              }
+            }}
+          >
+            <Entity
+              id={`${this.props.id}-action-text`}
+              primitive="a-text"
+              color="#FFFFFF"
+              value={this.props.actionText}
+              width="3"
+              height="0.5"
+              position={{
+                x: -0.60,
+                y: 0.38,
+                z: 1.1,
+              }}
+            />
+          </a-box>
         </Entity>
       </Entity>
     );
@@ -127,6 +150,8 @@ Modal.propTypes = {
   content: PropTypes.string,
   image: PropTypes.string,
   visible: PropTypes.bool,
+  to: PropTypes.string,
+  actionText: PropTypes.string,
   position: PropTypes.shape({
     x: PropTypes.integer,
     y: PropTypes.integer,
@@ -135,12 +160,14 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
+  id: 'modal__generic',
   title: 'Please give me a title :)',
   content: 'Please give me some content :)',
   image: '',
-  position: { x: 0, y: 0, z: -10 },
   visible: false,
-  id: 'modal__generic',
+  to: '',
+  actionText: 'Close',
+  position: { x: 0, y: 0, z: -10 },
 };
 
 export default Modal;

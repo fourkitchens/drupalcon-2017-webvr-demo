@@ -21,10 +21,11 @@ const NoMatch = {
         visible
         id="modal__404"
         title="404, not found!"
+        actionText="Back"
+        to="#"
         content={['The scene you are looking for does not exist.',
           'We\'re so sorry! We\'ll notice this in our analytics, and',
           'resolve the issue :) Thanks for exploring our VR scenes!'].join(' ')}
-        to="#"
         image={require('../../assets/images/404-cuteness.jpg')}
       />
     </Entity>
