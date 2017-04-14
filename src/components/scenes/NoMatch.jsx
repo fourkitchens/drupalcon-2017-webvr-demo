@@ -28,10 +28,6 @@ const NoMatch = {
         to="#"
         image={require('../../assets/images/404-cuteness.jpg')}
       />
-
-      <Link to="#" position={{ x: 20, y: 0, z: -10 }} />
-
-      <Sound mp3={require('../../assets/sounds/can-open.mp3')} position={{ x: -20, y: 0, z: -10 }} />
     </Entity>
   ),
 };
