@@ -78,6 +78,10 @@ aframe-react@^4.0.3:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
 
+"aframe-ui-modal-component@github:patrickocoffeyo/aframe-ui-modal-component":
+  version "1.0.0"
+  resolved "https://codeload.github.com/patrickocoffeyo/aframe-ui-modal-component/tar.gz/b3fd81793c042f1a60870ed43060f798115fa87d"
+
 aframe@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/aframe/-/aframe-0.5.0.tgz#c6335cad86ee7a731062415b718da79e764e96ef"

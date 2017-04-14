@@ -35,7 +35,7 @@ Sound.propTypes = {
 
 Sound.defaultProps = {
   id: 'sound-hotspot',
-  src: require('../assets/images/play-sound.png'),
+  src: require('../assets/images/play-sound.jpg'),
   position: { x: 10, y: 0, z: -10 },
   width: 1,
   height: 1,
