@@ -10,7 +10,8 @@ import { Scene, Entity } from 'aframe-react';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
-import SuzyOne from './components/scenes/Suzy.jsx';
+import SuzyOne from './components/scenes/Suzy-backyard.jsx';
+import SuzyTwo from './components/scenes/Suzy-office.jsx';
 
 require('./styles/index.scss');
 
@@ -27,7 +28,7 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {};
-    this.state.scenes = [SuzyOne, NoMatch];
+    this.state.scenes = [SuzyOne, SuzyTwo, NoMatch];
     this.state.initialScene = this.fetchSceneByName('suzy-back-yard');
     this.state.currentScene = this.fetchSceneByUrl();
   }
