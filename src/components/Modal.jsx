@@ -7,6 +7,7 @@ import React, { PropTypes } from 'react';
 import { Entity } from 'aframe-react';
 
 require('aframe-look-at-component');
+require('aframe-ui-modal-component');
 
 /**
  * @class
@@ -69,21 +70,19 @@ class Modal extends React.Component {
     };
 
     return (
-      <Entity
-        id={this.props.id}
-        position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
-        look-at="#camera"
-      >
+      <Entity id={this.props.id}>
         <a-circle
           id={`${this.props.id}-hotspot`}
           radius="0.3"
-          position="2 1 0.3"
           src={this.state.hotspotSrc}
           color="#FFFFFF"
+          position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
+          look-at="#camera"
           onClick={() => this.toggleVisibility()}
         />
         <Entity
           id={`${this.props.id}-box`}
+          ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           primitive="a-box"
           visible={this.state.visible || false}
           depth="0"
