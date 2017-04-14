@@ -11,8 +11,8 @@ import registerClickDrag from 'aframe-click-drag-component';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
-import SuzyOne from './components/scenes/Suzy-backyard.jsx';
-import SuzyTwo from './components/scenes/Suzy-office.jsx';
+import SuzyBackyard from './components/scenes/Suzy-backyard.jsx';
+import SuzyOffice from './components/scenes/Suzy-office.jsx';
 
 require('./styles/index.scss');
 
@@ -31,8 +31,8 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {};
-    this.state.scenes = [SuzyOne, SuzyTwo, NoMatch];
-    this.state.initialScene = this.fetchSceneByName('suzy-office');
+    this.state.scenes = [SuzyBackyard, SuzyOffice, NoMatch];
+    this.state.initialScene = this.fetchSceneByName('suzy-backyard');
     this.state.currentScene = this.fetchSceneByUrl();
   }
 
