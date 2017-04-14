@@ -34,11 +34,11 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  color: '#35AA4E',
+  color: '#FFFFFF',
   id: 'hotspot',
   to: '#',
   position: { x: 0, y: 0, z: -10 },
-  src: require('../assets/images/visit-link.png'),
+  src: require('../assets/images/visit-link.jpg'),
 };
 
 export default Link;
