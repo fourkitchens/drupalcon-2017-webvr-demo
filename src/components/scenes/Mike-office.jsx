@@ -62,8 +62,16 @@ const MikeOffice = {
       />
       <Sound id="sound-wall-e" mp3={require('../../assets/sounds/wall-e_sound.mp3')} position={{ x: -7.77, y: -2.73, z: 13.69 }} />
       <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: -0.51, y: 17.65, z: -8.48 }} />
-      <Link id="link__suzy-office" to="suzy-office" position={{ x: -16.27, y: -5.02, z: -2.50 }} />\
-      <Link id="link__mike-workshop" to="mike-workshop" position={{ x: 20.26, y: -6.87, z: 6.09 }} />
+      <Link
+        id="link__suzy-office"
+        to="suzy-office"
+        position={{ x: -16.27, y: -5.02, z: -2.50 }}
+      />
+      <Link
+        id="link__mike-workshop"
+        to="mike-workshop"
+        position={{ x: 20.26, y: -6.87, z: 6.09 }}
+      />
     </Entity>
   ),
 };
