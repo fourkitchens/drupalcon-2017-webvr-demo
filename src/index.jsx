@@ -13,6 +13,8 @@ import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
 import SuzyBackyard from './components/scenes/Suzy-backyard.jsx';
 import SuzyOffice from './components/scenes/Suzy-office.jsx';
+import MikeOffice from './components/scenes/Mike-office.jsx';
+import MikeWorkshop from './components/scenes/Mike-workshop.jsx';
 
 require('./styles/index.scss');
 
@@ -31,7 +33,7 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {};
-    this.state.scenes = [SuzyBackyard, SuzyOffice, NoMatch];
+    this.state.scenes = [SuzyBackyard, SuzyOffice, MikeOffice, MikeWorkshop, NoMatch];
     this.state.initialScene = this.fetchSceneByName('suzy-backyard');
     this.state.currentScene = this.fetchSceneByUrl();
   }
