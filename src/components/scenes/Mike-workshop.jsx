@@ -18,6 +18,12 @@ const MikeWorkshop = {
   sky: require('../../assets/images/scenes/mike-workshop.jpg'),
   scene: () => (
     <Entity>
+      <Entity
+        primitive="a-sound"
+        src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
+        position={{ x: 6.94, y: -7.98, z: -16.98 }}
+        autoplay
+      />
       <Modal
         id="modal__jigs"
         title="Jigs aren't just for dancing"
@@ -67,7 +73,7 @@ const MikeWorkshop = {
         content={['The sign says "careful, evil mother-in-law. Mike\'s mom gave it to his wife after they were married for a few years. It would be funny if it wasn\'t so true.'].join(' ')}
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
-      <Sound id="sound-wall-e" mp3={require('../../assets/sounds/table-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
+      <Sound id="sound-table-saw" mp3={require('../../assets/sounds/table-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
       <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: -0.51, y: 17.65, z: -8.48 }} />
       <Link id="link__mike-office" to="mike-office" position={{ x: 14.50, y: -1.92, z: 16.32 }} />
     </Entity>
