@@ -57,7 +57,7 @@ class NavigationScene extends React.Component {
 
     // If no scene was found, return the 404 not found scene.
     if (!newScene) {
-      return { name: 'no-match' };
+      return this.fetchSceneByName('no-match');
     }
 
     return newScene;
@@ -90,7 +90,15 @@ class NavigationScene extends React.Component {
       name = this.state.initialScene.name;
     }
 
-    return this.fetchSceneByName(name);
+    const scene = this.fetchSceneByName(name);
+
+    // If this is a no-match scene, ensure no-match is in the url.
+    if (scene.name === 'no-match') {
+      window.location.hash = 'no-match';
+    }
+
+
+    return scene;
   }
 
   /**
