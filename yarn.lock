@@ -70,6 +70,12 @@ acorn@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.2.tgz#dc1c8fb907f64db2ab573de2326b73527c24de36"
 
+aframe-click-drag-component@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/aframe-click-drag-component/-/aframe-click-drag-component-3.0.1.tgz#cd2510937100c46ed87c2320519131edb9d4c3c7"
+  dependencies:
+    deep-equal "^1.0.1"
+
 aframe-look-at-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/aframe-look-at-component/-/aframe-look-at-component-0.2.0.tgz#070c82b137fb9253d2be0e4cb8d2638a6ce99dd9"
@@ -1762,6 +1768,10 @@ deep-assign@^2.0.0:
   resolved "https://registry.yarnpkg.com/deep-assign/-/deep-assign-2.0.0.tgz#ebe06b1f07f08dae597620e3dd1622f371a1c572"
   dependencies:
     is-obj "^1.0.0"
+
+deep-equal@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
 deep-equal@~0.2.0:
   version "0.2.2"
