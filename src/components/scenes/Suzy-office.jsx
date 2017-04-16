@@ -35,6 +35,7 @@ const SuzyTwo = {
           'quilts. She is a very skilled quilt-builder. Doug, help me :D'].join(' ')}
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
+      <Sound id="sound__sewing" mp3={require('../../assets/sounds/sewing-machine.mp3')} position={{ x: 18.31, y: -8.84, z: 20.61 }} />
       <Modal
         id="modal__thread"
         title="Every thread tells a story."
