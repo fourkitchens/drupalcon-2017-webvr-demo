@@ -66,11 +66,17 @@ const fetchIp = () => (
   })
 );
 
+// Calculate the build destination.
+let dest = `${__dirname}/dist`;
+if (process.env.NODE_ENV === NODE_ENV_PRODUCTION) {
+  dest = __dirname;
+}
+
 module.exports = () => (
   fetchIp().then(host => ({
     entry: './src/index.jsx',
     output: {
-      path: `${__dirname}/dist`,
+      path: dest,
       filename: 'drupalcon-vr.[hash].js',
       publicPath: '',
     },
