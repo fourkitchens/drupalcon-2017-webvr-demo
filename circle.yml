@@ -16,11 +16,10 @@ deployment:
       - git pull origin master
       - git checkout gh-pages
       - git pull origin gh-pages
-      - git merge master -m "Merge in for deployment"
-      - rm -r dist
+      - git merge master -m "Merge in for deployment."
       - npm run build:prod
-      - git add dist
-      - git commit -m "Deployment"
+      - git add -A
+      - git commit -m "Deployment from PR merge."
       - git push origin gh-pages
       - npm run semantic-release || true
 
