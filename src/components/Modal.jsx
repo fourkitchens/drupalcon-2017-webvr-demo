@@ -134,10 +134,10 @@ class Modal extends React.Component {
           <a-box
             id={`${this.props.id}-action`}
             color="#D2D2D2"
-            depth="0.3"
-            width="3"
+            depth="0.25"
+            width="1.5"
             height="0.5"
-            position="0 .50 0"
+            position="0 -1.5 0"
             onClick={() => this.handleActionButtonClick()}
           >
             <a-text
@@ -147,7 +147,7 @@ class Modal extends React.Component {
               width="3"
               height="0.5"
               onClick={() => this.handleActionButtonClick()}
-              position="-.25 -.1 1.1"
+              position="-.15 .38 1.1"
             />
           </a-box>
         </Entity>
