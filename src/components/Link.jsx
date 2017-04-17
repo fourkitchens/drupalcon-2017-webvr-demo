@@ -44,7 +44,7 @@ Link.defaultProps = {
   id: 'hotspot',
   to: '#',
   position: { x: 0, y: 0, z: -10 },
-  src: require('../assets/images/visit-link.jpg'),
+  src: require('../assets/images/png/steps.png'),
 };
 
 export default Link;

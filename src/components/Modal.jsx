@@ -79,7 +79,7 @@ class Modal extends React.Component {
           primitive="a-image"
           src={this.props.image}
           width={this.state.width}
-          height="2"
+          height="2.75"
           position={{ x: 0, y: (this.state.height / 2), z: 0.1 }}
         />
       );
@@ -89,7 +89,7 @@ class Modal extends React.Component {
       <Entity id={this.props.id}>
         <a-circle
           id={`${this.props.id}-hotspot`}
-          src={require('../assets/images/open-modal.jpg')}
+          src={require('../assets/images/png/info.png')}
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
@@ -101,7 +101,7 @@ class Modal extends React.Component {
           ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           visible={this.state.visible || false}
           depth="0.1"
-          color="#284760"
+          color="#35AA4E"
           width={this.state.width}
           height={this.state.height}
         >
@@ -109,45 +109,45 @@ class Modal extends React.Component {
           <Entity
             id={`${this.props.id}-title`}
             primitive="a-text"
-            color="#FFFFFF"
+            color="#D7EEDC"
             value={this.props.title}
             width="5.5"
             height="2"
             position={{
               x: -1.8,
-              y: ((this.state.height / 2) + this.state.textOffset + 0.7),
+              y: ((this.state.height / 2) + this.state.textOffset + 0.35),
               z: 0.1,
             }}
           />
           <Entity
             id={`${this.props.id}-content`}
             primitive="a-text"
-            color="#FFFFFF"
+            color="#D7EEDC"
             value={this.props.content}
             width="3.5"
             position={{
               x: -1.8,
-              y: ((this.state.height / 2) + this.state.textOffset),
+              y: ((this.state.height / 2.25) + this.state.textOffset),
               z: 0.1,
             }}
           />
           <a-box
             id={`${this.props.id}-action`}
-            color="#284760"
+            color="#D2D2D2"
             depth="0.3"
-            width="1"
+            width="3"
             height="0.5"
-            position="1.7 -1.5 0"
+            position="0 .50 0"
             onClick={() => this.handleActionButtonClick()}
           >
             <a-text
               id={`${this.props.id}-action-text`}
-              color="#FFFFFF"
+              color="#414141"
               value={this.props.actionText}
               width="3"
               height="0.5"
               onClick={() => this.handleActionButtonClick()}
-              position="-0.60 0.38 1.1"
+              position="-.25 -.1 1.1"
             />
           </a-box>
         </Entity>

@@ -48,7 +48,7 @@ const SuzyOne = {
         content="Lets take a tour of Suzy's wicked setup!"
         to="suzy-office"
         actionText="Office"
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/circle-test.png')}
       />
       <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: 22, y: -3, z: 18 }} />
       <Link id="hotspot-house-3" to={'suzy-house'} position={{ x: -16, y: 3, z: 21.5 }} />
