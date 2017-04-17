@@ -4,6 +4,7 @@
  */
 
 import React, { PropTypes } from 'react';
+import ReactGA from 'react-ga';
 
 require('aframe-look-at-component');
 
@@ -13,6 +14,11 @@ require('aframe-look-at-component');
 const Link = props => (
   <a-circle
     onClick={() => {
+      ReactGA.event({
+        category: 'Hotspot',
+        action: 'Clicked Link',
+        label: props.to,
+      });
       window.location.hash = props.to;
     }}
     {...props}

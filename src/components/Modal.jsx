@@ -5,6 +5,7 @@
 
 import React, { PropTypes } from 'react';
 import { Entity } from 'aframe-react';
+import ReactGA from 'react-ga';
 
 require('aframe-look-at-component');
 require('aframe-ui-modal-component');
@@ -46,6 +47,11 @@ class Modal extends React.Component {
    * Handles action button clicks/fuses.
    */
   handleActionButtonClick() {
+    ReactGA.event({
+      category: 'Modal Button',
+      action: 'Clicked Modal Button',
+      label: this.props.id,
+    });
     if (this.props.to.length > 0) {
       window.location.hash = this.props.to;
     } else {
@@ -81,7 +87,14 @@ class Modal extends React.Component {
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
-          onClick={() => this.toggleVisibility()}
+          onClick={() => {
+            ReactGA.event({
+              category: 'Hotspot',
+              action: 'Clicked Modal',
+              label: this.props.id,
+            });
+            this.toggleVisibility();
+          }}
         />
         <Entity
           id={`${this.props.id}-box`}
