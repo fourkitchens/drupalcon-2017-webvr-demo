@@ -38,8 +38,14 @@ class Modal extends React.Component {
    * Toggles the visibility of the modal attached to the hot spot.
    */
   toggleVisibility() {
+    const action = this.state.visible ? 'Closed' : 'Opened';
     this.setState({
       visible: !this.state.visible,
+    });
+    ReactGA.event({
+      category: 'Hotspot',
+      action: `${action} Modal`,
+      label: this.props.id,
     });
   }
 
@@ -87,14 +93,7 @@ class Modal extends React.Component {
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
-          onClick={() => {
-            ReactGA.event({
-              category: 'Hotspot',
-              action: 'Clicked Modal',
-              label: this.props.id,
-            });
-            this.toggleVisibility();
-          }}
+          onClick={() => this.toggleVisibility()}
         />
         <Entity
           id={`${this.props.id}-box`}
