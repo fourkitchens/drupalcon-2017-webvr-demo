@@ -72,7 +72,7 @@ module.exports = () => (
   fetchIp().then(host => ({
     entry: './src/index.jsx',
     output: {
-      path: `${__dirname}/dist`,
+      path: dest,
       filename: 'drupalcon-vr.[hash].js',
       publicPath: '',
     },
