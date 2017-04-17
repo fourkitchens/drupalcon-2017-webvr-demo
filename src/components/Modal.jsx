@@ -5,6 +5,7 @@
 
 import React, { PropTypes } from 'react';
 import { Entity } from 'aframe-react';
+import ReactGA from 'react-ga';
 
 require('aframe-look-at-component');
 require('aframe-ui-modal-component');
@@ -37,8 +38,14 @@ class Modal extends React.Component {
    * Toggles the visibility of the modal attached to the hot spot.
    */
   toggleVisibility() {
+    const action = this.state.visible ? 'Closed' : 'Opened';
     this.setState({
       visible: !this.state.visible,
+    });
+    ReactGA.event({
+      category: 'Hotspot',
+      action: `${action} Modal`,
+      label: this.props.id,
     });
   }
 
@@ -46,6 +53,11 @@ class Modal extends React.Component {
    * Handles action button clicks/fuses.
    */
   handleActionButtonClick() {
+    ReactGA.event({
+      category: 'Modal Button',
+      action: 'Clicked Modal Button',
+      label: this.props.id,
+    });
     if (this.props.to.length > 0) {
       window.location.hash = this.props.to;
     } else {

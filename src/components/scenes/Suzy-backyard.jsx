@@ -19,6 +19,23 @@ const SuzyOne = {
   scene: () => (
     <Entity>
       <Entity
+        id="4k-logo"
+        primitive="a-collada-model"
+        scale="100 100 100"
+        position={{ x: -5.15, y: -0.75, z: -14.80 }}
+        src={`src: url(${require('../../assets/3d/logo.dae')})`}
+      />
+      <Entity
+        primitive="a-text"
+        scale="4 4 4"
+        color="#D2D2D2"
+        position={{ x: 1.74, y: 0.03, z: -11.73 }}
+        wrap-count="30"
+        value="Web Chefs At Work & Play \n
+          A WebVR Jaunt by \n
+          Four Kitchens"
+      />
+      <Entity
         primitive="a-sound"
         src={`src: url(${require('../../assets/sounds/neighborhood-birds-ambient.mp3')})`}
         position={{ x: 1, y: 1, z: -5 }}

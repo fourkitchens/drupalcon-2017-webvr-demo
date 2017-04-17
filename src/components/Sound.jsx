@@ -4,6 +4,7 @@
  */
 
 import React, { PropTypes } from 'react';
+import ReactGA from 'react-ga';
 
 require('aframe-look-at-component');
 
@@ -16,6 +17,13 @@ const Sound = props => (
     {...props}
     position={`${props.position.x} ${props.position.y} ${props.position.z}`}
     look-at="#camera"
+    onClick={() => {
+      ReactGA.event({
+        category: 'Hotspot',
+        action: 'Played Sound',
+        label: `${props.id}`,
+      });
+    }}
   />
 );
 

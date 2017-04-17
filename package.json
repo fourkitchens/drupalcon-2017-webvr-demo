@@ -55,6 +55,7 @@
     "husky": "^0.13.2",
     "last-release-git": "^0.0.2",
     "node-sass": "^4.5.0",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "semantic-release": "^6.3.2",
     "style-loader": "^0.14.1",
@@ -68,6 +69,7 @@
     "aframe-react": "^4.0.3",
     "aframe-ui-modal-component": "github:patrickocoffeyo/aframe-ui-modal-component",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-ga": "^2.2.0"
   }
 }

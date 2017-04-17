@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import aframe from 'aframe';
 import { Scene, Entity } from 'aframe-react';
 import registerClickDrag from 'aframe-click-drag-component';
+import ReactGA from 'react-ga';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
@@ -19,6 +20,7 @@ import MikeWorkshop from './components/scenes/Mike-workshop.jsx';
 require('./styles/index.scss');
 
 registerClickDrag(aframe);
+ReactGA.initialize('UA-559851-16');
 
 /**
  * Scene that handles navigation.
@@ -98,7 +100,7 @@ class NavigationScene extends React.Component {
     if (scene.name === 'no-match') {
       window.location.hash = 'no-match';
     }
-
+    ReactGA.pageview(name);
 
     return scene;
   }
