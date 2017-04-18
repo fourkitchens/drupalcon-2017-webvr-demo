@@ -21,19 +21,28 @@ const SuzyOne = {
       <Entity
         id="4k-logo"
         primitive="a-collada-model"
-        scale="100 100 100"
-        position={{ x: -5.15, y: -0.75, z: -14.80 }}
+        scale="30 30 30"
+        position={{ x: -0.88, y: 2, z: -10 }}
         src={`src: url(${require('../../assets/3d/logo.dae')})`}
       />
       <Entity
         primitive="a-text"
-        scale="4 4 4"
-        color="#D2D2D2"
-        position={{ x: 1.74, y: 0.03, z: -11.73 }}
+        scale="3 3 3"
+        color="#FFFFFF"
+        position={{ x: -5.2, y: 0.2, z: -10 }}
         wrap-count="30"
-        value="Web Chefs At Work & Play \n
-          A WebVR Jaunt by \n
-          Four Kitchens"
+        value="Working with the Web Chefs"
+      />
+      <Entity
+        primitive="a-text"
+        scale="3 3 3"
+        color="#FFFFFF"
+        position={{ x: -5.2, y: -1.5, z: -10 }}
+        wrap-count="68"
+        line-height="60"
+        value="Explore life in WebVR with two of the Four Kitchens Web Chefs. \n
+        Look up, look down, look all around you! When you see an \n
+        interactive element just keep staring to click and learn more!"
       />
       <Entity
         primitive="a-sound"
