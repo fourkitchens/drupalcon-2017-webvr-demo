@@ -80,13 +80,13 @@ class Modal extends React.Component {
       if (this.props.image.length <= 0) {
         return (<div />);
       }
-
+      const size = this.state.width / 1.5;
       return (
         <Entity
           primitive="a-image"
           src={this.props.image}
-          width={this.state.width}
-          height="2.75"
+          width={size}
+          height={size}
           position={{ x: 0, y: (this.state.height / 2), z: 0.1 }}
         />
       );

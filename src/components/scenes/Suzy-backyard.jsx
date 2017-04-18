@@ -54,10 +54,10 @@ const SuzyOne = {
         id="modal__office"
         title="Welcome to the Shedquarters!"
         position={{ x: 24, y: 0, z: -4 }}
-        content="Lets take a tour of Suzy's wicked setup!"
+        content="Suzy's shed is home and office — click inside and look around!"
         to="suzy-office"
         actionText="Office"
-        image={require('../../assets/images/circle-test.png')}
+        image={require('../../assets/images/png/suzy-shedquarters.png')}
       />
       <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: 22, y: -3, z: 18 }} />
       <Link id="hotspot-house-3" to={'suzy-house'} position={{ x: -16, y: 3, z: 21.5 }} />
