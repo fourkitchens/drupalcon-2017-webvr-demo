@@ -63,11 +63,12 @@ const SuzyOne = {
       <Link id="hotspot-house-3" to={'suzy-house'} position={{ x: -16, y: 3, z: 21.5 }} />
       <Modal
         id="modal__treehouse"
-        title="Look at these g8 folks!"
+        title="Web Chef Club House!"
         actionText="Wow!"
         position={{ x: -17, y: 19, z: -11 }}
-        content="These fine people stay strong all winter by eating nachos."
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        content='"Hello!" says Doug and Lucy — Four Kitchens makes content go,
+        no matter what the context! Make sure to check out the "flat" version
+        of this content in the Knowledge section of our website.'
       />
       <Sound id="sound-some-webchefs-5" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: 22, y: -1.5, z: -9 }} />
     </Entity>
