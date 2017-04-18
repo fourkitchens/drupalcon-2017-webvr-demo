@@ -23,14 +23,21 @@ class Modal extends React.Component {
 
     this.state = {
       visible: this.props.visible,
+      src: require('../assets/images/jpg/x.jpg'),
       height: 2,
       width: 4,
       textOffset: -1.1,
     };
 
+    // Adjust modal height and text offset if a modal image was provided.
     if (props.image.length > 0) {
       this.state.textOffset = -2;
       this.state.height = 3;
+    }
+
+    // If this modal's action is a link, adjust the src icon.
+    if (this.props.to.length > 0) {
+      this.state.src = require('../assets/images/jpg/steps.jpg');
     }
   }
 
@@ -79,7 +86,7 @@ class Modal extends React.Component {
           primitive="a-image"
           src={this.props.image}
           width={this.state.width}
-          height="2"
+          height="2.75"
           position={{ x: 0, y: (this.state.height / 2), z: 0.1 }}
         />
       );
@@ -89,7 +96,7 @@ class Modal extends React.Component {
       <Entity id={this.props.id}>
         <a-circle
           id={`${this.props.id}-hotspot`}
-          src={require('../assets/images/open-modal.jpg')}
+          src={require('../assets/images/jpg/info.jpg')}
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
@@ -101,7 +108,7 @@ class Modal extends React.Component {
           ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           visible={this.state.visible || false}
           depth="0.1"
-          color="#284760"
+          color="#35AA4E"
           width={this.state.width}
           height={this.state.height}
         >
@@ -109,47 +116,35 @@ class Modal extends React.Component {
           <Entity
             id={`${this.props.id}-title`}
             primitive="a-text"
-            color="#FFFFFF"
+            color="#D7EEDC"
             value={this.props.title}
             width="5.5"
             height="2"
             position={{
               x: -1.8,
-              y: ((this.state.height / 2) + this.state.textOffset + 0.7),
+              y: ((this.state.height / 2) + this.state.textOffset + 0.35),
               z: 0.1,
             }}
           />
           <Entity
             id={`${this.props.id}-content`}
             primitive="a-text"
-            color="#FFFFFF"
+            color="#D7EEDC"
             value={this.props.content}
             width="3.5"
             position={{
               x: -1.8,
-              y: ((this.state.height / 2) + this.state.textOffset),
+              y: ((this.state.height / 2.25) + this.state.textOffset),
               z: 0.1,
             }}
           />
-          <a-box
+          <a-circle
             id={`${this.props.id}-action`}
-            color="#284760"
-            depth="0.3"
-            width="1"
-            height="0.5"
-            position="1.7 -1.5 0"
+            src={this.state.src}
+            position="0 0.5 0.3"
+            radius="0.3"
             onClick={() => this.handleActionButtonClick()}
-          >
-            <a-text
-              id={`${this.props.id}-action-text`}
-              color="#FFFFFF"
-              value={this.props.actionText}
-              width="3"
-              height="0.5"
-              onClick={() => this.handleActionButtonClick()}
-              position="-0.60 0.38 1.1"
-            />
-          </a-box>
+          />
         </Entity>
       </Entity>
     );
@@ -163,7 +158,6 @@ Modal.propTypes = {
   image: PropTypes.string,
   visible: PropTypes.bool,
   to: PropTypes.string,
-  actionText: PropTypes.string,
   position: PropTypes.shape({
     x: PropTypes.integer,
     y: PropTypes.integer,
@@ -178,7 +172,6 @@ Modal.defaultProps = {
   image: '',
   visible: false,
   to: '',
-  actionText: 'Close',
   position: { x: 0, y: 0, z: -10 },
 };
 
