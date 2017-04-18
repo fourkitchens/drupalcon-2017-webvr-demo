@@ -23,14 +23,21 @@ class Modal extends React.Component {
 
     this.state = {
       visible: this.props.visible,
+      src: require('../assets/images/png/x.png'),
       height: 2,
       width: 4,
       textOffset: -1.1,
     };
 
+    // Adjust modal height and text offset if a modal image was provided.
     if (props.image.length > 0) {
       this.state.textOffset = -2;
       this.state.height = 3;
+    }
+
+    // If this modal's action is a link, adjust the src icon.
+    if (this.props.to.length > 0) {
+      this.state.src = require('../assets/images/png/steps.png');
     }
   }
 
@@ -131,25 +138,13 @@ class Modal extends React.Component {
               z: 0.1,
             }}
           />
-          <a-box
+          <a-circle
             id={`${this.props.id}-action`}
-            color="#D2D2D2"
-            depth="0.25"
-            width="1.5"
-            height="0.5"
-            position="0 -1.5 0"
+            src={this.state.src}
+            position="0 0.5 0.3"
+            radius="0.3"
             onClick={() => this.handleActionButtonClick()}
-          >
-            <a-text
-              id={`${this.props.id}-action-text`}
-              color="#414141"
-              value={this.props.actionText}
-              width="3"
-              height="0.5"
-              onClick={() => this.handleActionButtonClick()}
-              position="-.15 .38 1.1"
-            />
-          </a-box>
+          />
         </Entity>
       </Entity>
     );
@@ -163,7 +158,6 @@ Modal.propTypes = {
   image: PropTypes.string,
   visible: PropTypes.bool,
   to: PropTypes.string,
-  actionText: PropTypes.string,
   position: PropTypes.shape({
     x: PropTypes.integer,
     y: PropTypes.integer,
@@ -178,7 +172,6 @@ Modal.defaultProps = {
   image: '',
   visible: false,
   to: '',
-  actionText: 'Close',
   position: { x: 0, y: 0, z: -10 },
 };
 
