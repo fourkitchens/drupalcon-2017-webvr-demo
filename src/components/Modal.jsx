@@ -24,9 +24,9 @@ class Modal extends React.Component {
     this.state = {
       visible: this.props.visible,
       src: require('../assets/images/jpg/x.jpg'),
-      height: 2,
+      height: 2.5,
       width: 4,
-      textOffset: -1.1,
+      textOffset: -1.5,
     };
 
     // Adjust modal height and text offset if a modal image was provided.
@@ -141,7 +141,7 @@ class Modal extends React.Component {
           <a-circle
             id={`${this.props.id}-action`}
             src={this.state.src}
-            position="0 0.5 0.3"
+            position="0 0.7 0.3"
             radius="0.3"
             onClick={() => this.handleActionButtonClick()}
           />
