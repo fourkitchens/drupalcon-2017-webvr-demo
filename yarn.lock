@@ -80,6 +80,10 @@ aframe-look-at-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/aframe-look-at-component/-/aframe-look-at-component-0.2.0.tgz#070c82b137fb9253d2be0e4cb8d2638a6ce99dd9"
 
+aframe-particle-system-component@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/aframe-particle-system-component/-/aframe-particle-system-component-1.0.9.tgz#6665c9dd82c77ff571713a87e3b90ac52c8a974b"
+
 aframe-react@^4.0.3:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
@@ -5656,6 +5660,10 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raw-loader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
 rc@^1.1.7:
   version "1.2.0"

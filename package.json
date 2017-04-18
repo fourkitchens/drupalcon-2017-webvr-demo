@@ -66,6 +66,7 @@
     "aframe": "^0.5.0",
     "aframe-click-drag-component": "^3.0.1",
     "aframe-look-at-component": "^0.2.0",
+    "aframe-particle-system-component": "^1.0.9",
     "aframe-react": "^4.0.3",
     "aframe-ui-modal-component": "github:patrickocoffeyo/aframe-ui-modal-component",
     "react": "^15.4.2",
