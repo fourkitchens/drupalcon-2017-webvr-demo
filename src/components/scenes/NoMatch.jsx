@@ -16,7 +16,7 @@ require('aframe-particle-system-component');
  */
 const NoMatch = {
   name: 'no-match',
-  sky: require('../../assets/images/no-match.png'),
+  sky: require('../../assets/images/scenes/no-match.png'),
   scene: () => (
     <Entity>
       <Entity
@@ -27,13 +27,12 @@ const NoMatch = {
         <Modal
           visible
           id="modal__404"
-          title="404, not found!"
+          title="404: Not Found In This Reality"
           actionText="Back"
           to="#"
-          content={['The scene you are looking for does not exist.',
-            'We\'re so sorry! We\'ll notice this in our analytics, and',
-            'resolve the issue :) Thanks for exploring our VR scenes!'].join(' ')}
-          image={require('../../assets/images/404-cuteness.jpg')}
+          content="The possibilities for WebVR are infinite, but this scene
+          hasn't been built yet. Go back to where you were and keep exploring!"
+          image={require('../../assets/images/jpg/404-cuteness.jpg')}
         />
       </Entity>
     </Entity>
