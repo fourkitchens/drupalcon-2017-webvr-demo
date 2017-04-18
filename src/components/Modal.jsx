@@ -23,7 +23,7 @@ class Modal extends React.Component {
 
     this.state = {
       visible: this.props.visible,
-      src: require('../assets/images/png/x.png'),
+      src: require('../assets/images/jpg/x.jpg'),
       height: 2,
       width: 4,
       textOffset: -1.1,
@@ -37,7 +37,7 @@ class Modal extends React.Component {
 
     // If this modal's action is a link, adjust the src icon.
     if (this.props.to.length > 0) {
-      this.state.src = require('../assets/images/png/steps.png');
+      this.state.src = require('../assets/images/jpg/steps.jpg');
     }
   }
 
@@ -96,7 +96,7 @@ class Modal extends React.Component {
       <Entity id={this.props.id}>
         <a-circle
           id={`${this.props.id}-hotspot`}
-          src={require('../assets/images/png/info.png')}
+          src={require('../assets/images/jpg/info.jpg')}
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
