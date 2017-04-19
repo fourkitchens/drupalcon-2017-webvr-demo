@@ -21,6 +21,12 @@ const MikeWorkshop = {
   scene: () => (
     <Entity>
       <Entity
+        primitive="a-sound"
+        src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
+        position={{ x: 6.94, y: -7.98, z: -16.98 }}
+        autoplay
+      />
+      <Entity
         rotation={{ x: 0, y: -48, z: 0 }}
         position={{ x: 5.78, y: 0, z: -12 }}
       >
@@ -45,53 +51,49 @@ const MikeWorkshop = {
           id="welcome__text"
           scale="3 3 3"
           color="#FFFFFF"
-          wrap-count="68"
-          line-height="60"
-          value="Explore life in WebVR with two of the Four Kitchens Web Chefs. \n
-          Look up, look down, look all around you! When you see an \n
-          interactive element just keep staring to click and learn more!"
-          position={{ x: 0.2, y: -1, z: 0 }}
+          wrap-count="42"
+          line-height="50"
+          value="Explore life in WebVR with two of the Four Kitchens Web Chefs.
+          Look up, look down, look all around you - VR content is everywhere.
+          To “click” on an interaction, look at the icon until the circle fills
+          up - that’s a “click” in VR!"
+          position={{ x: -1.8, y: -2, z: 0 }}
         />
       </Entity>
-      <Entity
-        primitive="a-sound"
-        src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
-        position={{ x: 6.94, y: -7.98, z: -16.98 }}
-        autoplay
-      />
       <Modal
-        id="modal__jigs"
-        title="Jigs aren't just for dancing"
-        position={{ x: 4.56, y: 0.94, z: -18.38 }}
-        content={['This whole wall is full of different table saw jigs, or devices to hold work and guide tools. He made the one on the left so he could make tapered beer taps for Four Kitchens.'].join(' ')}
+        id="modal__mikebio"
+        title="Meet Mike Minecki!"
+        position={{ x: 22.93, y: -7.96, z: -2.97 }}
+        content=" - Director of Technology \n - Thinker and maker extraordinaire
+        \n- Lego maniac \n - Political refugee from Poland!"
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
         id="modal__slinky"
-        title="Jigs aren't just for dancing, but raves are"
+        title="All Kinds of Jigs"
         position={{ x: -15.09, y: -3.77, z: 8.68 }}
-        content={['Mike spent most of his 20s throwing underground all night dance events. You might judge him for it, but he doesn\'t care because most of his raver friends are leaders in thier fields and super successful.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Modal
-        id="modal__joiner"
-        title="This the most expensive tool in the shop."
-        position={{ x: 14.27, y: -20.73, z: 9.59 }}
-        content={['With a table saw, a chop saw and a drill press you\'d think it would be a power tool.'].join(' ')}
+        content='Some jigs are for cutting, some are for dancing. Mike uses his
+        wall of tools and various jigs to cut all kinds of things, like the "4K"
+        kegerator taps, or this wooden icon for JAM On It productions,
+        because Mike is an o.g. raver kid 5ever.'
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
         id="modal__prints"
-        title="Mike comes from good stock."
+        title="Meet Jan Lebenstein"
         position={{ x: 20.93, y: -4.74, z: 8.38 }}
-        content={['These prints are by Mike\'s grand uncle Jan Lebenstein. Jan defected from communist Poland when we recieved the the Grand Prix at the 1st Biennale of Youth in Paris. He spent his life there, because communisim sucks.'].join(' ')}
+        content="Mike's Grand Uncle Jan is a famous Polish artist. He gave Mike
+        these two prints of his work, currently worth over $10,000. Get a damn
+        frame, Mike!"
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
         id="modal__hackers"
-        title="Mike builds robots with kids."
+        title="Build Robots with Kids"
         position={{ x: 6.88, y: -10.57, z: -6.29 }}
-        content={['At Drupalcon Amsterdam Johanna Bergmann asked Mike to help her teach her son and his friends how to build robots. He was drunk so he said yes. Two years later its one of the best decisions of his life. Do you think Mike should make more life choices when sloshed?'].join(' ')}
+        content="For the last couple of years, Mike has been spending his Sunday
+        afternoons building robots with kids. Other Drupal-ers -- like Joanna
+        Gaines, Rob Ristroph, and Schnitzel -- are part of the group, too!"
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
