@@ -108,7 +108,7 @@ class Modal extends React.Component {
           ui-modal={`triggerElement: #${this.props.id}-hotspot`}
           visible={this.state.visible || false}
           depth="0.1"
-          color="#35AA4E"
+          color="#127218"
           width={this.state.width}
           height={this.state.height}
         >
