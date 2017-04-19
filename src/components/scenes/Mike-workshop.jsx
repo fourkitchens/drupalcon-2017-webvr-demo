@@ -10,6 +10,8 @@ import Link from '../Link.jsx';
 import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
 
+require('aframe-look-at-component');
+
 /**
  * Returns React component that render's Suzy Bate's initial scene.
  */
@@ -18,6 +20,39 @@ const MikeWorkshop = {
   sky: require('../../assets/images/scenes/mike-workshop.jpg'),
   scene: () => (
     <Entity>
+      <Entity
+        rotation={{ x: 0, y: -48, z: 0 }}
+        position={{ x: 5.78, y: 0, z: -12 }}
+      >
+        <Entity
+          id="welcome__logo"
+          primitive="a-collada-model"
+          scale="30 30 30"
+          src={`src: url(${require('../../assets/3d/logo.dae')})`}
+          position={{ x: 4.4, y: 2, z: 0 }}
+        />
+        <Entity
+          primitive="a-text"
+          id="welcome__title"
+          scale="3 3 3"
+          color="#FFFFFF"
+          wrap-count="30"
+          value="Working with the Web Chefs"
+          position={{ x: 0, y: 0.6, z: 0 }}
+        />
+        <Entity
+          primitive="a-text"
+          id="welcome__text"
+          scale="3 3 3"
+          color="#FFFFFF"
+          wrap-count="68"
+          line-height="60"
+          value="Explore life in WebVR with two of the Four Kitchens Web Chefs. \n
+          Look up, look down, look all around you! When you see an \n
+          interactive element just keep staring to click and learn more!"
+          position={{ x: 0.2, y: -1, z: 0 }}
+        />
+      </Entity>
       <Entity
         primitive="a-sound"
         src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
@@ -36,13 +71,6 @@ const MikeWorkshop = {
         title="Jigs aren't just for dancing, but raves are"
         position={{ x: -15.09, y: -3.77, z: 8.68 }}
         content={['Mike spent most of his 20s throwing underground all night dance events. You might judge him for it, but he doesn\'t care because most of his raver friends are leaders in thier fields and super successful.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Modal
-        id="modal__bike"
-        title="Mike rides his bike."
-        position={{ x: 11.16, y: -3.00, z: -15.72 }}
-        content={['Not all of Mike\'s hobbies keep him out of the sun. He an avid road cyclist. The farthest he\'s biked in one day is 120 miles. An ex-webchef made this super cool illustration of him.'].join(' ')}
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
