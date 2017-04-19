@@ -48,6 +48,7 @@ const SuzyOne = {
         src={`src: url(${require('../../assets/sounds/neighborhood-birds-ambient.mp3')})`}
         position={{ x: 1, y: 1, z: -5 }}
         autoplay
+        loop
       />
       <Modal
         id="modal__suzybio"

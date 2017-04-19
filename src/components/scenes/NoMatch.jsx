@@ -22,6 +22,7 @@ const NoMatch = {
         src={`src: url(${require('../../assets/sounds/404-ambient.mp3')})`}
         position={{ x: 1, y: 1, z: -5 }}
         autoplay
+        loop
       />
       <Modal
         visible
