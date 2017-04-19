@@ -20,52 +20,55 @@ const MikeOffice = {
     <Entity>
       <Modal
         id="modal__sash"
-        title="Mike wears a lot of hats at Four Kitchens."
-        position={{ x: 1.42, y: 4.61, z: -18.53 }}
-        content={['Mike wore that silly hat, a polish great coat, called a zupan and this sash at this wedding. The colors, orange and lavender matched his and his wifes wedding colors, respectively.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Modal
-        id="modal__flask"
-        title="Mirzu isn't just a screen name."
-        position={{ x: 1.95, y: -4.25, z: -18.01 }}
-        content={['Well it started as a screen name, but everyone he met for a long time met him first online, so all his oldest friends call him mirzu. If you want to make him smile call him that too.'].join(' ')}
+        title="Wear All The Hats"
+        position={{ x: 0.30, y: 3.40, z: -18.83 }}
+        content="Mike wears a lot of hats. At Four Kitchens, he wears a DoT hat,
+        a project engineer hat, and a fixer-of-broken-things hat. He wears a
+        lot of hats in life, too, like the time he wore a Żupan, which is what
+        this is—a traditional Polish hat + cloak garment that he wore for his wedding."
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
         id="modal__games"
-        title="Mike\'s a little into boardgames."
-        position={{ x: 21.86, y: 0.39, z: -6.29 }}
-        content={['He\'s got quite a collection and loves hosting friends and family for games. He almost moved them to a different shelf, but noticed that lots of people commented on them when he was on video calls, so he left them as a conversation starter.'].join(' ')}
+        title="Tabletop Champions"
+        position={{ x: 21.01, y: -4.43, z: -6.87 }}
+        content="A lot of the Web Chefs are gamers, but Mike's collection of
+        boardgames, card games, and video games is always an impressive
+        conversation starter. But what's that Polish nativity scene doing there?"
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
         id="modal__change"
-        title="Change the world by setting Knowledge free."
+        title="Change the World"
         position={{ x: 20.20, y: -3.91, z: 10.41 }}
-        content={['Every year Web Chefs get a custom printed poster to commemorate their tenure. Mike got this poster on his 3rd year. Its pretty neat.'].join(' ')}
+        content=""
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
-      <Modal
-        id="modal__lego"
-        title="Lego + Star Wars, what more could you ask for."
+      <Sound
+        id="sound__starwars"
+        mp3={require('../../assets/sounds/sound-placeholder.mp3')}
         position={{ x: -11.82, y: 5.10, z: -17.68 }}
-        content={['Mike\'s takes Star Wars and Lego really seriously. There\'s about 100 pounds of each in house, and when they combine *Magic*.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
       />
       <Modal
-        id="modal__computer_mike"
-        title="Mike coding is totally staged"
-        position={{ x: -14.92, y: -6.40, z: 6.63 }}
-        content={['He loves building stuff, in the virtual world or real world, but his job at 4k is almost all leadership and coordination. Maybe thats why he got seriously into wooodworking after being promoted.'].join(' ')}
+        id="modal__mike_computer"
+        title=" Call him Mirzu"
+        position={{ x: -14.57, y: -6.29, z: 7.59 }}
+        content='If you run into Mike online - which you probably will - he
+        goes by "Mirzu." His online handle started out as a nonsense joke,
+        but over the years it became an identity. If you want to make him
+        smile, call him Mirzu instead of Michal.'
         image={require('../../assets/images/modal-placeholder.jpg')}
       />
-      <Sound id="sound-wall-e" mp3={require('../../assets/sounds/wall-e_sound.mp3')} position={{ x: -7.77, y: -2.73, z: 13.69 }} />
-      <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: -0.51, y: 17.65, z: -8.48 }} />
-      <Link
-        id="link__suzy-office"
-        to="suzy-office"
+      <Sound id="sound__wall-e" mp3={require('../../assets/sounds/wall-e_sound.mp3')} position={{ x: -7.77, y: -2.73, z: 13.69 }} />
+      <Modal
+        id="modal__suzy-office"
+        title="Other Chefs, Other Stories"
         position={{ x: -16.27, y: -5.02, z: -2.50 }}
+        content="Four Kitchens is a fully distributed team, but we stay
+        connected with tools like Slack and Zoom. Click here to see another
+        Web Chef's VR Story!"
+        image={require('../../assets/images/png/suzy-desk.png')}
+        to="suzy-office"
       />
       <Link
         id="link__mike-workshop"
