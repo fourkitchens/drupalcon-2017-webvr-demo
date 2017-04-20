@@ -11,6 +11,7 @@ import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
 
 require('aframe-look-at-component');
+require('aframe-click-drag-component');
 
 /**
  * Returns React component that render's Suzy Bate's initial scene.
@@ -96,6 +97,7 @@ const MikeWorkshop = {
         Gaines, Rob Ristroph, and Schnitzel -- are part of the group, too!"
         image={require('../../assets/images/png/mike-robots.png')}
       />
+      <Sound click-drag id="sound__laundry" mp3={require('../../assets/sounds/mike-saw.mp3')} position={{ x: -3.22, y: -1.33, z: 21.95 }} />
       <Sound id="sound__saw" mp3={require('../../assets/sounds/mike-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
       <Link id="link__mike-office" to="mike-office" position={{ x: 14.50, y: -1.92, z: 16.32 }} />
     </Entity>
