@@ -25,7 +25,7 @@ const MikeOffice = {
         content="Mike wears a lot of hats. At Four Kitchens, he wears a DoT hat,
         a project engineer hat, and a fixer-of-broken-things hat. He wears a
         lot of hats in life, too, like the time he wore a Zupan, which is what
-        this is—a traditional Polish hat + cloak garment that he wore for his wedding."
+        this is - a traditional Polish hat + cloak garment that he wore for his wedding."
         image={require('../../assets/images/png/mike-sash.png')}
       />
       <Modal
