@@ -24,9 +24,9 @@ const MikeOffice = {
         position={{ x: 0.30, y: 3.40, z: -18.83 }}
         content="Mike wears a lot of hats. At Four Kitchens, he wears a DoT hat,
         a project engineer hat, and a fixer-of-broken-things hat. He wears a
-        lot of hats in life, too, like the time he wore a Żupan, which is what
+        lot of hats in life, too, like the time he wore a Zupan, which is what
         this is—a traditional Polish hat + cloak garment that he wore for his wedding."
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-sash.png')}
       />
       <Modal
         id="modal__games"
@@ -35,18 +35,18 @@ const MikeOffice = {
         content="A lot of the Web Chefs are gamers, but Mike's collection of
         boardgames, card games, and video games is always an impressive
         conversation starter. But what's that Polish nativity scene doing there?"
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-games.png')}
       />
       <Modal
         id="modal__change"
         title="Change the World"
         position={{ x: 20.20, y: -3.91, z: 10.41 }}
         content=""
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-poster.png')}
       />
       <Sound
         id="sound__starwars"
-        mp3={require('../../assets/sounds/sound-placeholder.mp3')}
+        mp3={require('../../assets/sounds/mike-lego.mp3')}
         position={{ x: -11.82, y: 5.10, z: -17.68 }}
       />
       <Modal
@@ -57,9 +57,7 @@ const MikeOffice = {
         goes by "Mirzu." His online handle started out as a nonsense joke,
         but over the years it became an identity. If you want to make him
         smile, call him Mirzu instead of Michal.'
-        image={require('../../assets/images/modal-placeholder.jpg')}
       />
-      <Sound id="sound__wall-e" mp3={require('../../assets/sounds/wall-e_sound.mp3')} position={{ x: -7.77, y: -2.73, z: 13.69 }} />
       <Modal
         id="modal__suzy-office"
         title="Other Chefs, Other Stories"

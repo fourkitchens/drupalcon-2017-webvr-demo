@@ -22,7 +22,7 @@ const MikeWorkshop = {
     <Entity>
       <Entity
         primitive="a-sound"
-        src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
+        src={`src: url(${require('../../assets/sounds/mike-saw.mp3')})`}
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
         autoplay
       />
@@ -66,7 +66,7 @@ const MikeWorkshop = {
         position={{ x: 22.93, y: -7.96, z: -2.97 }}
         content=" - Director of Technology \n - Thinker and maker extraordinaire
         \n- Lego maniac \n - Political refugee from Poland!"
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-bio.png')}
       />
       <Modal
         id="modal__slinky"
@@ -76,16 +76,16 @@ const MikeWorkshop = {
         wall of tools and various jigs to cut all kinds of things, like the "4K"
         kegerator taps, or this wooden icon for JAM On It productions,
         because Mike is an o.g. raver kid 5ever.'
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-tools.png')}
       />
       <Modal
         id="modal__prints"
         title="Meet Jan Lebenstein"
         position={{ x: 20.93, y: -4.74, z: 8.38 }}
         content="Mike's Grand Uncle Jan is a famous Polish artist. He gave Mike
-        these two prints of his work, currently worth over $10,000. Get a damn
-        frame, Mike!"
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        these two prints of his work, currently worth over $10,000. \n \n
+        Get a damn frame, Mike!"
+        image={require('../../assets/images/png/mike-prints.png')}
       />
       <Modal
         id="modal__hackers"
@@ -94,17 +94,9 @@ const MikeWorkshop = {
         content="For the last couple of years, Mike has been spending his Sunday
         afternoons building robots with kids. Other Drupal-ers -- like Joanna
         Gaines, Rob Ristroph, and Schnitzel -- are part of the group, too!"
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        image={require('../../assets/images/png/mike-robots.png')}
       />
-      <Modal
-        id="modal__uwaga"
-        title="This is the laundry room"
-        position={{ x: -3.21, y: -1.15, z: 16.69 }}
-        content={['The sign says "careful, evil mother-in-law. Mike\'s mom gave it to his wife after they were married for a few years. It would be funny if it wasn\'t so true.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Sound id="sound-table-saw" mp3={require('../../assets/sounds/table-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
-      <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: -0.51, y: 17.65, z: -8.48 }} />
+      <Sound id="sound__saw" mp3={require('../../assets/sounds/mike-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
       <Link id="link__mike-office" to="mike-office" position={{ x: 14.50, y: -1.92, z: 16.32 }} />
     </Entity>
   ),
