@@ -39,16 +39,17 @@ const MikeOffice = {
       />
       <Modal
         id="modal__change"
-        title="Change the World"
+        title="Change the World..."
         position={{ x: 20.20, y: -3.91, z: 10.41 }}
-        content=""
         image={require('../../assets/images/png/mike-poster.png')}
+        content="... by Setting Knowledge Free. This was the 2014 anniversary
+        poster for Four Kitchens. In 2014, Mike celebrated his third year as
+        a Web Chef. This poster was created by artist Bobby Dixon."
       />
       <Sound
         id="sound__starwars"
         mp3={require('../../assets/sounds/mike-lego.mp3')}
         position={{ x: -11.82, y: 5.10, z: -17.68 }}
-        volume="50"
       />
       <Modal
         id="modal__mike_computer"

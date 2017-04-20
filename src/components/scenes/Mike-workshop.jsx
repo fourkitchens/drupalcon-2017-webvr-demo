@@ -24,12 +24,12 @@ const MikeWorkshop = {
         primitive="a-sound"
         src={`src: url(${require('../../assets/sounds/mike-saw.mp3')})`}
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
-        volume="10"
-        autoplay
+        volume={10}
+        autoplay={false}
       />
       <Entity
-        rotation={{ x: 0, y: -48, z: 0 }}
-        position={{ x: 5.78, y: 0, z: -12 }}
+        rotation={{ x: 0, y: -26.76, z: 0 }}
+        position={{ x: 6.88, y: 0, z: -11.46 }}
       >
         <Entity
           id="welcome__logo"
@@ -105,7 +105,6 @@ const MikeWorkshop = {
       <Sound
         id="sound__saw"
         mp3={require('../../assets/sounds/mike-saw.mp3')}
-        volume="10"
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
       />
       <Link
