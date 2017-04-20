@@ -36,7 +36,7 @@ class NavigationScene extends React.Component {
     // Collect all scenes into an iterable object.
     this.state = {};
     this.state.scenes = [SuzyBackyard, SuzyOffice, MikeOffice, MikeWorkshop, NoMatch];
-    this.state.initialScene = this.fetchSceneByName('suzy-backyard');
+    this.state.initialScene = this.fetchSceneByName('mike-workshop');
     this.state.currentScene = this.fetchSceneByUrl();
   }
 

@@ -13,7 +13,7 @@ require('aframe-look-at-component');
  */
 const Sound = props => (
   <a-circle
-    sound={`src: url(${props.mp3}); on: click`}
+    sound={`src: url(${props.mp3}); on: click; volume: ${props.volume};`}
     {...props}
     position={`${props.position.x} ${props.position.y} ${props.position.z}`}
     look-at="#camera"
@@ -34,6 +34,7 @@ Sound.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   depth: PropTypes.number,
+  volume: PropTypes.number,
   position: PropTypes.shape({
     x: PropTypes.integer,
     y: PropTypes.integer,
@@ -48,6 +49,7 @@ Sound.defaultProps = {
   width: 1,
   height: 1,
   depth: 0,
+  volume: 10,
 };
 
 export default Sound;

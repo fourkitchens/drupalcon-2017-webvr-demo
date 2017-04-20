@@ -10,6 +10,8 @@ import Link from '../Link.jsx';
 import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
 
+require('aframe-look-at-component');
+
 /**
  * Returns React component that render's Suzy Bate's initial scene.
  */
@@ -20,62 +22,96 @@ const MikeWorkshop = {
     <Entity>
       <Entity
         primitive="a-sound"
-        src={`src: url(${require('../../assets/sounds/table-saw.mp3')})`}
+        src={`src: url(${require('../../assets/sounds/mike-saw.mp3')})`}
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
-        autoplay
+        volume={10}
+        autoplay={false}
       />
+      <Entity
+        rotation={{ x: 0, y: -26.76, z: 0 }}
+        position={{ x: 6.88, y: 0, z: -11.46 }}
+      >
+        <Entity
+          id="welcome__logo"
+          primitive="a-collada-model"
+          scale="30 30 30"
+          src={`src: url(${require('../../assets/3d/logo.dae')})`}
+          position={{ x: 4.4, y: 2, z: 0 }}
+        />
+        <Entity
+          primitive="a-text"
+          id="welcome__title"
+          scale="3 3 3"
+          color="#FFFFFF"
+          wrap-count="30"
+          value="Working with the Web Chefs"
+          position={{ x: 0, y: 0.6, z: 0 }}
+        />
+        <Entity
+          primitive="a-text"
+          id="welcome__text"
+          scale="3 3 3"
+          color="#FFFFFF"
+          wrap-count="42"
+          line-height="50"
+          value="Explore life in WebVR with two of the Four Kitchens Web Chefs.
+          Look up, look down, look all around you - VR content is everywhere.
+          To “click” on an interaction, look at the icon until the circle fills
+          up - that’s a “click” in VR!"
+          position={{ x: -1.8, y: -2, z: 0 }}
+        />
+      </Entity>
       <Modal
-        id="modal__jigs"
-        title="Jigs aren't just for dancing"
-        position={{ x: 4.56, y: 0.94, z: -18.38 }}
-        content={['This whole wall is full of different table saw jigs, or devices to hold work and guide tools. He made the one on the left so he could make tapered beer taps for Four Kitchens.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        id="modal__mikebio"
+        title="Meet Mike Minecki!"
+        position={{ x: 22.93, y: -7.96, z: -2.97 }}
+        content=" - Director of Technology \n - Thinker and maker extraordinaire
+        \n- Lego maniac \n - Political refugee from Poland!"
+        image={require('../../assets/images/png/mike-bio.png')}
       />
       <Modal
         id="modal__slinky"
-        title="Jigs aren't just for dancing, but raves are"
+        title="All Kinds of Jigs"
         position={{ x: -15.09, y: -3.77, z: 8.68 }}
-        content={['Mike spent most of his 20s throwing underground all night dance events. You might judge him for it, but he doesn\'t care because most of his raver friends are leaders in thier fields and super successful.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Modal
-        id="modal__bike"
-        title="Mike rides his bike."
-        position={{ x: 11.16, y: -3.00, z: -15.72 }}
-        content={['Not all of Mike\'s hobbies keep him out of the sun. He an avid road cyclist. The farthest he\'s biked in one day is 120 miles. An ex-webchef made this super cool illustration of him.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
-      />
-      <Modal
-        id="modal__joiner"
-        title="This the most expensive tool in the shop."
-        position={{ x: 14.27, y: -20.73, z: 9.59 }}
-        content={['With a table saw, a chop saw and a drill press you\'d think it would be a power tool.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        content='Some jigs are for cutting, some are for dancing. Mike uses his
+        wall of tools and various jigs to cut all kinds of things, like the "4K"
+        kegerator taps, or this wooden icon for JAM On It productions,
+        because Mike is an o.g. raver kid 5ever.'
+        image={require('../../assets/images/png/mike-tools.png')}
       />
       <Modal
         id="modal__prints"
-        title="Mike comes from good stock."
+        title="Meet Jan Lebenstein"
         position={{ x: 20.93, y: -4.74, z: 8.38 }}
-        content={['These prints are by Mike\'s grand uncle Jan Lebenstein. Jan defected from communist Poland when we recieved the the Grand Prix at the 1st Biennale of Youth in Paris. He spent his life there, because communisim sucks.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        content="Mike's Grand Uncle Jan is a famous Polish artist. He gave Mike
+        these two prints of his work, currently worth over $10,000. \n \n
+        Get a damn frame, Mike!"
+        image={require('../../assets/images/png/mike-prints.png')}
       />
       <Modal
         id="modal__hackers"
-        title="Mike builds robots with kids."
+        title="Build Robots with Kids"
         position={{ x: 6.88, y: -10.57, z: -6.29 }}
-        content={['At Drupalcon Amsterdam Johanna Bergmann asked Mike to help her teach her son and his friends how to build robots. He was drunk so he said yes. Two years later its one of the best decisions of his life. Do you think Mike should make more life choices when sloshed?'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
+        content="For the last couple of years, Mike has been spending his Sunday
+        afternoons building robots with kids. Other Drupal-ers -- like Joanna
+        Gaines, Rob Ristroph, and Schnitzel -- are part of the group, too!"
+        image={require('../../assets/images/png/mike-robots.png')}
       />
-      <Modal
-        id="modal__uwaga"
-        title="This is the laundry room"
-        position={{ x: -3.21, y: -1.15, z: 16.69 }}
-        content={['The sign says "careful, evil mother-in-law. Mike\'s mom gave it to his wife after they were married for a few years. It would be funny if it wasn\'t so true.'].join(' ')}
-        image={require('../../assets/images/modal-placeholder.jpg')}
+      <Sound
+        id="sound__laundry"
+        mp3={require('../../assets/sounds/mike-saw.mp3')}
+        position={{ x: -3.22, y: -1.33, z: 21.95 }}
       />
-      <Sound id="sound-table-saw" mp3={require('../../assets/sounds/table-saw.mp3')} position={{ x: 6.94, y: -7.98, z: -16.98 }} />
-      <Sound id="sound-joke-2" mp3={require('../../assets/sounds/sound-placeholder.mp3')} position={{ x: -0.51, y: 17.65, z: -8.48 }} />
-      <Link id="link__mike-office" to="mike-office" position={{ x: 14.50, y: -1.92, z: 16.32 }} />
+      <Sound
+        id="sound__saw"
+        mp3={require('../../assets/sounds/mike-saw.mp3')}
+        position={{ x: 6.94, y: -7.98, z: -16.98 }}
+      />
+      <Link
+        id="link__mike-office"
+        to="mike-office"
+        position={{ x: 14.50, y: -1.92, z: 16.32 }}
+      />
     </Entity>
   ),
 };

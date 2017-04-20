@@ -18,32 +18,6 @@ const SuzyOne = {
   scene: () => (
     <Entity>
       <Entity
-        id="4k-logo"
-        primitive="a-collada-model"
-        scale="30 30 30"
-        position={{ x: -0.88, y: 2, z: -10 }}
-        src={`src: url(${require('../../assets/3d/logo.dae')})`}
-      />
-      <Entity
-        primitive="a-text"
-        scale="3 3 3"
-        color="#FFFFFF"
-        position={{ x: -5.2, y: 0.2, z: -10 }}
-        wrap-count="30"
-        value="Working with the Web Chefs"
-      />
-      <Entity
-        primitive="a-text"
-        scale="3 3 3"
-        color="#FFFFFF"
-        position={{ x: -5.2, y: -1.5, z: -10 }}
-        wrap-count="68"
-        line-height="60"
-        value="Explore life in WebVR with two of the Four Kitchens Web Chefs. \n
-        Look up, look down, look all around you! When you see an \n
-        interactive element just keep staring to click and learn more!"
-      />
-      <Entity
         primitive="a-sound"
         src={`src: url(${require('../../assets/sounds/neighborhood-birds-ambient.mp3')})`}
         position={{ x: 1, y: 1, z: -5 }}

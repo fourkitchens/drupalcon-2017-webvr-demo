@@ -134,7 +134,7 @@ class Modal extends React.Component {
             width="3.5"
             position={{
               x: -1.8,
-              y: ((this.state.height / 2.25) + this.state.textOffset),
+              y: ((this.state.height / 2.5) + this.state.textOffset),
               z: 0.1,
             }}
           />
