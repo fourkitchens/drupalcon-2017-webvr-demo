@@ -48,6 +48,7 @@ const MikeOffice = {
         id="sound__starwars"
         mp3={require('../../assets/sounds/mike-lego.mp3')}
         position={{ x: -11.82, y: 5.10, z: -17.68 }}
+        volume="50"
       />
       <Modal
         id="modal__mike_computer"
