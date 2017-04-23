@@ -25,11 +25,19 @@ const NoMatch = {
         loop
       />
       <Modal
-        visible
         id="modal__404"
         title="404: Not Found In This Reality"
         to="#"
         position={{ x: 1, y: 1, z: -5 }}
+        content="The possibilities for WebVR are infinite, but this scene
+        hasn't been built yet. Go back to where you were and keep exploring!"
+        image={require('../../assets/images/png/404-lego.png')}
+      />
+      <Modal
+        id="modal__4042"
+        title="404: Not Found In This Reality"
+        to="#"
+        position={{ x: -1, y: 1, z: 5 }}
         content="The possibilities for WebVR are infinite, but this scene
         hasn't been built yet. Go back to where you were and keep exploring!"
         image={require('../../assets/images/png/404-lego.png')}
