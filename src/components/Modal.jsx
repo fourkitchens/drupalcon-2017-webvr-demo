@@ -42,13 +42,31 @@ class Modal extends React.Component {
   }
 
   /**
+   * Sets up event listeners and dispatchers for modal-open events.
+   */
+  componentDidMount() {
+    document.addEventListener('modal-opened', (e) => {
+      // If the modal being "opened" is not the current modal, close.
+      if (e.detail !== this.props.id) {
+        this.setState({ visible: false });
+      }
+    });
+  }
+
+  /**
    * Toggles the visibility of the modal attached to the hot spot.
    */
   toggleVisibility() {
-    const action = this.state.visible ? 'Closed' : 'Opened';
+    // Dispatch an an event.
+    const action = this.state.visible ? 'closed' : 'opened';
+    document.dispatchEvent(new CustomEvent(`modal-${action}`, { detail: this.props.id }));
+
+    // Update the state visibility property.
     this.setState({
       visible: !this.state.visible,
     });
+
+    // Track event in Google Analytics.
     ReactGA.event({
       category: 'Hotspot',
       action: `${action} Modal`,
@@ -141,7 +159,7 @@ class Modal extends React.Component {
           <a-circle
             id={`${this.props.id}-action`}
             src={this.state.src}
-            position="0 0.7 0.3"
+            position="0 0.7 0.5"
             radius="0.3"
             onClick={() => this.handleActionButtonClick()}
           />
