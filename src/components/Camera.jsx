@@ -6,6 +6,8 @@
 import { Entity } from 'aframe-react';
 import React from 'react';
 
+require('aframe-mouse-cursor-component');
+
 /**
  * Returns React component containing cursor and Camera.
  * {@inheritdoc}
@@ -13,6 +15,7 @@ import React from 'react';
 const Camera = props => (
   <Entity
     id="camera"
+    mouse-cursor
     camera
     look-controls {...props}
   >

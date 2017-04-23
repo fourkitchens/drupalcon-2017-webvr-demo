@@ -23,7 +23,6 @@ class Modal extends React.Component {
 
     this.state = {
       visible: this.props.visible,
-      src: require('../assets/images/jpg/x.jpg'),
       height: 2.5,
       width: 4,
       textOffset: -1.5,
@@ -34,21 +33,34 @@ class Modal extends React.Component {
       this.state.textOffset = -2;
       this.state.height = 3;
     }
+  }
 
-    // If this modal's action is a link, adjust the src icon.
-    if (this.props.to.length > 0) {
-      this.state.src = require('../assets/images/jpg/steps.jpg');
-    }
+  /**
+   * Sets up event listeners and dispatchers for modal-open events.
+   */
+  componentDidMount() {
+    document.addEventListener('modal-opened', (e) => {
+      // If the modal being "opened" is not the current modal, close.
+      if (e.detail !== this.props.id) {
+        this.setState({ visible: false });
+      }
+    });
   }
 
   /**
    * Toggles the visibility of the modal attached to the hot spot.
    */
   toggleVisibility() {
-    const action = this.state.visible ? 'Closed' : 'Opened';
+    // Dispatch an an event.
+    const action = this.state.visible ? 'closed' : 'opened';
+    document.dispatchEvent(new CustomEvent(`modal-${action}`, { detail: this.props.id }));
+
+    // Update the state visibility property.
     this.setState({
       visible: !this.state.visible,
     });
+
+    // Track event in Google Analytics.
     ReactGA.event({
       category: 'Hotspot',
       action: `${action} Modal`,
@@ -57,18 +69,16 @@ class Modal extends React.Component {
   }
 
   /**
-   * Handles action button clicks/fuses.
+   * Handles navigation item clicks/fuses.
    */
-  handleActionButtonClick() {
-    ReactGA.event({
-      category: 'Modal Button',
-      action: 'Clicked Modal Button',
-      label: this.props.id,
-    });
+  navigate() {
     if (this.props.to.length > 0) {
+      ReactGA.event({
+        category: 'Modal Button',
+        action: 'Clicked Modal Button',
+        label: this.props.id,
+      });
       window.location.hash = this.props.to;
-    } else {
-      this.toggleVisibility();
     }
   }
 
@@ -139,11 +149,19 @@ class Modal extends React.Component {
             }}
           />
           <a-circle
+            visible={this.props.to.length > 0 ? 'true' : 'false'}
             id={`${this.props.id}-action`}
-            src={this.state.src}
-            position="0 0.7 0.3"
+            src={require('../assets/images/jpg/steps.jpg')}
+            position="0.9 0.5 0.5"
             radius="0.3"
-            onClick={() => this.handleActionButtonClick()}
+            onClick={() => this.navigate()}
+          />
+          <a-circle
+            id={`${this.props.id}-close`}
+            src={require('../assets/images/jpg/x.jpg')}
+            position={this.props.image.length > 0 ? '-0.9 0.5 0.5' : '0 0.7 0.5'}
+            radius="0.3"
+            onClick={() => this.toggleVisibility()}
           />
         </Entity>
       </Entity>

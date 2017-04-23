@@ -80,6 +80,10 @@ aframe-look-at-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/aframe-look-at-component/-/aframe-look-at-component-0.2.0.tgz#070c82b137fb9253d2be0e4cb8d2638a6ce99dd9"
 
+aframe-mouse-cursor-component@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/aframe-mouse-cursor-component/-/aframe-mouse-cursor-component-0.4.1.tgz#f3784416fc3b7c65551064145846625af8ca3243"
+
 aframe-react@^4.0.3:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.0.7.tgz#7258317f22430515410eb0144c80190a8dc097a4"
