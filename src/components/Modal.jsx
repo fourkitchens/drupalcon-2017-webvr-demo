@@ -86,7 +86,6 @@ class Modal extends React.Component {
    * Renders this component.
    */
   render() {
-    console.log(this.state.visible);
     const Image = () => {
       if (this.props.image.length <= 0) {
         return (<div />);
