@@ -52,6 +52,7 @@ const MikeWorkshop = {
           id="welcome__text"
           scale="3 3 3"
           color="#FFFFFF"
+          background="#000000"
           wrap-count="42"
           line-height="50"
           value="Explore life in WebVR with two of the Four Kitchens Web Chefs.
