@@ -39,6 +39,7 @@ const Camera = props => (
       <a-animation
         begin="click"
         attribute="material.color"
+        from="white"
         to="#127218"
         direction="alternate"
         repeat="1"
