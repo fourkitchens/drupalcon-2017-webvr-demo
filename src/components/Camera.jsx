@@ -37,15 +37,12 @@ const Camera = props => (
       }}
     >
       <a-animation
-        begin="cursor-fusing"
-        easing="ease-in"
-        attribute="scale"
-        fill="forwards"
+        begin="click"
+        attribute="material.color"
+        to="#127218"
         direction="alternate"
         repeat="1"
         dur="500"
-        from="1 1 1"
-        to="0.1 0.1 0.1"
       />
     </Entity>
   </Entity>
