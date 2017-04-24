@@ -1,6 +1,6 @@
 /**
- * @file Suzy.jsx
- * This file exports all scenes pertaining to Suzy Bate's workspace.
+ * @file Mike-office.jsx
+ * This file exports all scenes pertaining to Mike's office.
  */
 
 import { Entity } from 'aframe-react';
@@ -11,7 +11,7 @@ import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
 
 /**
- * Returns React component that render's Suzy Bate's initial scene.
+ * Returns React component that render's Mike's office.
  */
 const MikeOffice = {
   name: 'mike-office',
@@ -22,10 +22,8 @@ const MikeOffice = {
         id="modal__sash"
         title="Wear All The Hats"
         position={{ x: 0.30, y: 3.40, z: -18.83 }}
-        content="Mike wears a lot of hats. At Four Kitchens, he wears a DoT hat,
-        a project engineer hat, and a fixer-of-broken-things hat. He wears a
-        lot of hats in life, too, like the time he wore a Zupan, which is what
-        this is - a traditional Polish hat + cloak garment that he wore for his wedding."
+        content="He wears a lot of hats in life, too. For his wedding, he wore
+        this Zupan -- a traditional Polish hat + cloak garment."
         image={require('../../assets/images/png/mike-sash.png')}
       />
       <Modal
@@ -55,7 +53,7 @@ const MikeOffice = {
         id="modal__mike_computer"
         title=" Call him Mirzu"
         position={{ x: -14.57, y: -6.29, z: 7.59 }}
-        content='If you run into Mike online - which you probably will - he
+        content='If you run into Mike online -- which you probably will -- he
         goes by "Mirzu." His online handle started out as a nonsense joke,
         but over the years it became an identity. If you want to make him
         smile, call him Mirzu instead of Michal.'

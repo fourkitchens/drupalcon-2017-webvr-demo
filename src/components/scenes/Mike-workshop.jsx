@@ -1,6 +1,6 @@
 /**
- * @file Suzy.jsx
- * This file exports all scenes pertaining to Suzy Bate's workspace.
+ * @file Mike-workshop.jsx
+ * This file exports all scenes pertaining to Mike's workspace.
  */
 
 import { Entity } from 'aframe-react';
@@ -13,7 +13,7 @@ import Modal from '../Modal.jsx';
 require('aframe-look-at-component');
 
 /**
- * Returns React component that render's Suzy Bate's initial scene.
+ * Returns React component that render's Mike's initial scene.
  */
 const MikeWorkshop = {
   name: 'mike-workshop',
@@ -91,17 +91,12 @@ const MikeWorkshop = {
       />
       <Modal
         id="modal__hackers"
-        title="Build Robots with Kids"
+        title="Building Robots with Kids"
         position={{ x: 6.88, y: -10.57, z: -6.29 }}
         content="For the last couple of years, Mike has been spending his Sunday
         afternoons building robots with kids. Other Drupal-ers -- like Joanna
         Gaines, Rob Ristroph, and Schnitzel -- are part of the group, too!"
         image={require('../../assets/images/png/mike-robots.png')}
-      />
-      <Sound
-        id="sound__laundry"
-        mp3={require('../../assets/sounds/mike-saw.mp3')}
-        position={{ x: -3.22, y: -1.33, z: 21.95 }}
       />
       <Sound
         id="sound__saw"
