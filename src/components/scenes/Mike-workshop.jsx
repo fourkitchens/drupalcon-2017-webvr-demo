@@ -55,11 +55,8 @@ const MikeWorkshop = {
           background="#000000"
           wrap-count="42"
           line-height="50"
-          value="Explore life in WebVR with two of the Four Kitchens Web Chefs.
-          Look up, look down, look all around you - VR content is everywhere.
-          To “click” on an interaction, look at the icon until the circle fills
-          up - that’s a “click” in VR!"
-          position={{ x: -1.8, y: -2, z: 0 }}
+          value="Explore life in WebVR with two of Four Kitchens' best!"
+          position={{ x: -1.8, y: -0.5, z: 0 }}
         />
       </Entity>
       <Modal
