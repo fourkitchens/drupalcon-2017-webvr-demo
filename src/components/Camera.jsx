@@ -43,7 +43,7 @@ const Camera = props => (
         to="#127218"
         direction="alternate"
         repeat="1"
-        dur="500"
+        dur="250"
       />
     </Entity>
   </Entity>
