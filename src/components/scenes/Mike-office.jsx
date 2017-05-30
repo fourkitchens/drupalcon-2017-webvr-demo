@@ -58,15 +58,10 @@ const MikeOffice = {
         but over the years it became an identity. If you want to make him
         smile, call him Mirzu instead of Michal.'
       />
-      <Modal
-        id="modal__suzy-office"
-        title="Other Chefs, Other Stories"
-        position={{ x: -16.27, y: -5.02, z: -2.50 }}
-        content="Four Kitchens is a fully distributed team, but we stay
-        connected with tools like Slack and Zoom. Click here to see another
-        Web Chef's VR Story!"
-        image={require('../../assets/images/png/suzy-desk.png')}
+      <Link
+        id="link__suzy-office"
         to="suzy-office"
+        position={{ x: -16.27, y: -5.02, z: -2.50 }}
       />
       <Link
         id="link__mike-workshop"
