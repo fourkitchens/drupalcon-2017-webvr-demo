@@ -19,33 +19,22 @@ const Camera = props => (
     camera
     look-controls {...props}
   >
-    <Entity
-      id="cursor"
-      cursor
-      fuse
-      fuseTimeout="10"
+    <a-entity
+      cursor="fuseTimeout: 500"
       position="0 0 -1"
-      color="white"
-      geometry={{
-        primitive: 'ring',
-        radiusInner: 0.01,
-        radiusOuter: 0.02,
-      }}
-      material={{
-        color: 'white',
-        shader: 'flat',
-      }}
+      geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+      material="color: white; shader: flat"
     >
       <a-animation
         begin="click"
         attribute="material.color"
         from="white"
-        to="#127218"
+        to="grey"
         direction="alternate"
         repeat="1"
         dur="300"
       />
-    </Entity>
+    </a-entity>
   </Entity>
 );
 
