@@ -23,7 +23,7 @@ const Camera = props => (
       id="cursor"
       cursor
       fuse
-      fuseTimeout="100"
+      fuseTimeout="10"
       position="0 0 -1"
       color="white"
       geometry={{
@@ -43,7 +43,7 @@ const Camera = props => (
         to="#127218"
         direction="alternate"
         repeat="1"
-        dur="50"
+        dur="300"
       />
     </Entity>
   </Entity>
