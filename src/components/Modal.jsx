@@ -39,28 +39,36 @@ class Modal extends React.Component {
    * Sets up event listeners and dispatchers for modal-open events.
    */
   componentDidMount() {
-    document.addEventListener('modal-opened', (e) => {
-      // If the modal being "opened" is not the current modal, close.
-      if (e.detail !== this.props.id) {
-        this.setState({ visible: false });
+    document.addEventListener('click', (e) => {
+      if (e.constructor.name === 'CustomEvent') {
+        if (e.target.id === `${this.props.id}-hotspot`) {
+          this.toggleVisibility(true);
+        }
+        else {
+          this.setState({ visible: false });
+        }
       }
     });
   }
 
   /**
    * Toggles the visibility of the modal attached to the hot spot.
+   *
+   * @param {string} visible Optional boolean indicating whether or not this
+   *                         modal should be set to visible.
    */
-  toggleVisibility() {
-    // Dispatch an an event.
-    const action = this.state.visible ? 'closed' : 'opened';
-    document.dispatchEvent(new CustomEvent(`modal-${action}`, { detail: this.props.id }));
+  toggleVisibility(visible) {
+    if (typeof visible === 'undefined') {
+      visible = !this.state.visible;
+    }
 
     // Update the state visibility property.
     this.setState({
-      visible: !this.state.visible,
+      visible: visible,
     });
 
     // Track event in Google Analytics.
+    const action = visible ? 'closed' : 'opened';
     ReactGA.event({
       category: 'Hotspot',
       action: `${action} Modal`,
@@ -110,7 +118,6 @@ class Modal extends React.Component {
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
-          onClick={() => this.toggleVisibility()}
         />
         <Entity
           id={`${this.props.id}-box`}
