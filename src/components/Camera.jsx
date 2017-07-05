@@ -15,11 +15,12 @@ require('aframe-mouse-cursor-component');
 const Camera = props => (
   <Entity
     id="camera"
-    mouse-cursor
+    mouse-cursor={!AFRAME.utils.device.checkHeadsetConnected()}
     camera
     look-controls {...props}
   >
     <a-entity
+      visible={AFRAME.utils.device.checkHeadsetConnected()}
       cursor="fuseTimeout: 500"
       position="0 0 -1"
       geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
