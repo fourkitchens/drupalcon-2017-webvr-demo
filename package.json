@@ -12,7 +12,8 @@
     "start": "NODE_ENV=development webpack-dev-server --https",
     "build:dev": "NODE_ENV=development webpack",
     "build:prod": "NODE_ENV=production webpack -p",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "npm run lint"
   },
   "contributors": [
     {

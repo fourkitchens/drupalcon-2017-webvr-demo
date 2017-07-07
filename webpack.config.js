@@ -57,7 +57,6 @@ const fetchIp = () => (
     if (DEVELOPMENT_SERVER_IP) {
       resolve(DEVELOPMENT_SERVER_IP);
     } else {
-      dns.lookup(os.hostname(), (e, a) => console.log(a));
       dns.lookup(os.hostname(), (error, address) => (error ? reject(error) : resolve(address)));
     }
   })

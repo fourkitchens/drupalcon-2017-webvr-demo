@@ -43,8 +43,7 @@ class Modal extends React.Component {
       if (e.constructor.name === 'CustomEvent') {
         if (e.target.id === `${this.props.id}-hotspot`) {
           this.toggleVisibility(true);
-        }
-        else {
+        } else {
           this.setState({ visible: false });
         }
       }
@@ -54,18 +53,17 @@ class Modal extends React.Component {
   /**
    * Toggles the visibility of the modal attached to the hot spot.
    *
-   * @param {string} visible Optional boolean indicating whether or not this
-   *                         modal should be set to visible.
+   * @param {string} visibility
+   *   Optional boolean indicating whether or not this should be visible.
    */
-  toggleVisibility(visible) {
+  toggleVisibility(visibility) {
+    let visible = visibility;
     if (typeof visible === 'undefined') {
       visible = !this.state.visible;
     }
 
     // Update the state visibility property.
-    this.setState({
-      visible: visible,
-    });
+    this.setState({ visible });
 
     // Track event in Google Analytics.
     const action = visible ? 'closed' : 'opened';
