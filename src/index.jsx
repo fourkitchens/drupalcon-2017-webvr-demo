@@ -118,10 +118,10 @@ class NavigationScene extends React.Component {
   render() {
     return (
       <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+        <Entity laser-controls position={{ x: 0.3, y: -0.6, z: 0 }} />
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
-        <Entity primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
+        <Entity onClick={console.log('yay')} primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
         <Camera />
-
         {this.state.currentScene.scene()}
       </Scene>
     );

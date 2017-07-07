@@ -166,7 +166,7 @@ class Modal extends React.Component {
             src={require('../assets/images/jpg/x.jpg')}
             position={this.props.image.length > 0 ? '-0.9 0.5 0.5' : '0 0.7 0.5'}
             radius="0.3"
-            onClick={() => this.toggleVisibility()}
+            onClick={() => this.toggleVisibility(false)}
           />
         </Entity>
       </Entity>
