@@ -17,8 +17,6 @@ import SuzyOffice from './components/scenes/Suzy-office.jsx';
 import MikeOffice from './components/scenes/Mike-office.jsx';
 import MikeWorkshop from './components/scenes/Mike-workshop.jsx';
 
-require('./styles/index.scss');
-
 registerClickDrag(aframe);
 ReactGA.initialize('UA-559851-16');
 
