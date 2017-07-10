@@ -37,10 +37,16 @@ class Modal extends React.Component {
   }
 
   componentDidMount() {
+    // Listen for all clicks.
     document.addEventListener('click', (e) => {
+      // If this is a custom event, and a click this modal's hotspot, open.
+      // Otherwise, if the last activation timestamp is over 100 ms ago (not a
+      // rouge event), and the current device isn't a cardboard with a fuse
+      // based cursor, this is a close event.
       if (e.constructor.name === 'CustomEvent' && e.target.id === `${this.props.id}-hotspot`) {
         this.toggleVisibility(true);
-      } else if ((Date.now() - this.state.lastActivation) > 100) {
+      } else if ((Date.now() - this.state.lastActivation) > 100 &&
+                 (!AFRAME.utils.device.isMobile() || AFRAME.utils.device.checkHeadsetConnected())) {
         this.toggleVisibility(false);
       }
     });

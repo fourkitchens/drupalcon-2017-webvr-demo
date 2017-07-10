@@ -14,8 +14,11 @@ require('aframe-mouse-cursor-component');
  */
 const Camera = (props) => {
   let cursor;
+  const gamepads = navigator.getGamepads();
 
-  if (AFRAME.utils.device.checkHeadsetConnected()) {
+  // If this is a mobile device and a headset is not connected, make sure a
+  // fuse-based cursor raycaster appears.
+  if (AFRAME.utils.device.isMobile() && gamepads[0] === null) {
     cursor = (
       <a-entity
         cursor="fuseTimeout: 500"
