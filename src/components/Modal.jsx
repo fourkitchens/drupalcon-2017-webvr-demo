@@ -26,6 +26,7 @@ class Modal extends React.Component {
       height: 2.5,
       width: 4,
       textOffset: -1.5,
+      lastActivation: null,
     };
 
     // Adjust modal height and text offset if a modal image was provided.
@@ -35,17 +36,12 @@ class Modal extends React.Component {
     }
   }
 
-  /**
-   * Sets up event listeners and dispatchers for modal-open events.
-   */
   componentDidMount() {
     document.addEventListener('click', (e) => {
-      if (e.constructor.name === 'CustomEvent') {
-        if (e.target.id === `${this.props.id}-hotspot`) {
-          this.toggleVisibility(true);
-        } else {
-          this.setState({ visible: false });
-        }
+      if (e.constructor.name === 'CustomEvent' && e.target.id === `${this.props.id}-hotspot`) {
+        this.toggleVisibility(true);
+      } else if ((Date.now() - this.state.lastActivation) > 100) {
+        this.toggleVisibility(false);
       }
     });
   }
@@ -63,7 +59,7 @@ class Modal extends React.Component {
     }
 
     // Update the state visibility property.
-    this.setState({ visible });
+    this.setState({ visible, lastActivation: Date.now() });
 
     // Track event in Google Analytics.
     const action = visible ? 'closed' : 'opened';
