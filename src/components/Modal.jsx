@@ -46,7 +46,7 @@ class Modal extends React.Component {
       if (e.constructor.name === 'CustomEvent' && e.target.id === `${this.props.id}-hotspot`) {
         this.toggleVisibility(true);
       } else if ((Date.now() - this.state.lastActivation) > 100 &&
-                 (!AFRAME.utils.device.isMobile() || AFRAME.utils.device.checkHeadsetConnected())) {
+                 (!AFRAME.utils.device.isMobile())) {
         this.toggleVisibility(false);
       }
     });
