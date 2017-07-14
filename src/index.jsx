@@ -17,8 +17,6 @@ import SuzyOffice from './components/scenes/Suzy-office.jsx';
 import MikeOffice from './components/scenes/Mike-office.jsx';
 import MikeWorkshop from './components/scenes/Mike-workshop.jsx';
 
-require('./styles/index.scss');
-
 registerClickDrag(aframe);
 ReactGA.initialize('UA-559851-16');
 
@@ -120,10 +118,10 @@ class NavigationScene extends React.Component {
   render() {
     return (
       <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+        <Entity laser-controls position={{ x: 0.3, y: -0.6, z: 0 }} />
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
         <Entity primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
         <Camera />
-
         {this.state.currentScene.scene()}
       </Scene>
     );
