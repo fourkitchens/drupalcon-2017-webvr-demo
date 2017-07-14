@@ -26,6 +26,7 @@ class Modal extends React.Component {
       height: 2.5,
       width: 4,
       textOffset: -1.5,
+      lastActivation: null,
     };
 
     // Adjust modal height and text offset if a modal image was provided.
@@ -35,32 +36,39 @@ class Modal extends React.Component {
     }
   }
 
-  /**
-   * Sets up event listeners and dispatchers for modal-open events.
-   */
   componentDidMount() {
-    document.addEventListener('modal-opened', (e) => {
-      // If the modal being "opened" is not the current modal, close.
-      if (e.detail !== this.props.id) {
-        this.setState({ visible: false });
+    // Listen for all clicks.
+    document.addEventListener('click', (e) => {
+      // If this is a custom event, and a click this modal's hotspot, open.
+      // Otherwise, if the last activation timestamp is over 100 ms ago (not a
+      // rouge event), and the current device isn't a cardboard with a fuse
+      // based cursor, this is a close event.
+      if (e.constructor.name === 'CustomEvent' && e.target.id === `${this.props.id}-hotspot`) {
+        this.toggleVisibility(true);
+      } else if ((Date.now() - this.state.lastActivation) > 100 &&
+                 (!AFRAME.utils.device.isMobile())) {
+        this.toggleVisibility(false);
       }
     });
   }
 
   /**
    * Toggles the visibility of the modal attached to the hot spot.
+   *
+   * @param {string} visibility
+   *   Optional boolean indicating whether or not this should be visible.
    */
-  toggleVisibility() {
-    // Dispatch an an event.
-    const action = this.state.visible ? 'closed' : 'opened';
-    document.dispatchEvent(new CustomEvent(`modal-${action}`, { detail: this.props.id }));
+  toggleVisibility(visibility) {
+    let visible = visibility;
+    if (typeof visible === 'undefined') {
+      visible = !this.state.visible;
+    }
 
     // Update the state visibility property.
-    this.setState({
-      visible: !this.state.visible,
-    });
+    this.setState({ visible, lastActivation: Date.now() });
 
     // Track event in Google Analytics.
+    const action = visible ? 'closed' : 'opened';
     ReactGA.event({
       category: 'Hotspot',
       action: `${action} Modal`,
@@ -110,7 +118,6 @@ class Modal extends React.Component {
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
-          onClick={() => this.toggleVisibility()}
         />
         <Entity
           id={`${this.props.id}-box`}
@@ -161,7 +168,7 @@ class Modal extends React.Component {
             src={require('../assets/images/jpg/x.jpg')}
             position={this.props.image.length > 0 ? '-0.9 0.5 0.5' : '0 0.7 0.5'}
             radius="0.3"
-            onClick={() => this.toggleVisibility()}
+            onClick={() => this.toggleVisibility(false)}
           />
         </Entity>
       </Entity>
