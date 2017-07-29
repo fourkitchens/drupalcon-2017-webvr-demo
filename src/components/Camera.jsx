@@ -4,7 +4,7 @@
  */
 
 import { Entity } from 'aframe-react';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 require('aframe-mouse-cursor-component');
 
@@ -64,6 +64,8 @@ class Camera extends Component {
         id="camera"
         mouse-cursor={!AFRAME.utils.device.checkHeadsetConnected()}
         camera
+        rotation={this.props.rotation}
+        position={this.props.position}
         look-controls {...this.state.props}
       >
         {cursor}
@@ -71,5 +73,19 @@ class Camera extends Component {
     );
   }
 }
+
+Camera.propTypes = {
+  rotation: PropTypes.string,
+  position: PropTypes.shape({
+    x: PropTypes.integer,
+    y: PropTypes.integer,
+    z: PropTypes.integer,
+  }),
+};
+
+Camera.defaultProps = {
+  rotation: '0 0 0',
+  position: { x: 0, y: 0, z: 0 },
+};
 
 export default Camera;

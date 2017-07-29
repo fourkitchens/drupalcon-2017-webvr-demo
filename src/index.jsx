@@ -36,6 +36,7 @@ class NavigationScene extends React.Component {
     this.state.scenes = [SuzyBackyard, SuzyOffice, MikeOffice, MikeWorkshop, NoMatch];
     this.state.initialScene = this.fetchSceneByName('mike-workshop');
     this.state.currentScene = this.fetchSceneByUrl();
+    this.state.currentScene.camera = this.state.currentScene.camera || {};
   }
 
   /**
@@ -121,7 +122,10 @@ class NavigationScene extends React.Component {
         <Entity laser-controls position={{ x: 0.3, y: -0.6, z: 0 }} />
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
         <Entity primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
-        <Camera />
+        <Camera
+          rotation={this.state.currentScene.camera.rotation || '0 0 0'}
+          postition={this.state.currentScene.camera.position || { x: 0, y: 0, z: 0 }}
+        />
         {this.state.currentScene.scene()}
       </Scene>
     );
