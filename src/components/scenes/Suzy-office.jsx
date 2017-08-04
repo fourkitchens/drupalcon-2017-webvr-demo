@@ -51,8 +51,18 @@ const SuzyTwo = {
         mp3={require('../../assets/sounds/suzy-office-space.mp3')}
         position={{ x: -0.51, y: 17.65, z: -8.48 }}
       />
-      <Link id="link__mike-office" to="mike-office" position={{ x: -13.9, y: -3.05, z: 6.48 }} />
-      <Link id="hotspot__backyard" to="suzy-backyard" position={{ x: 0.86, y: -7.10, z: -17.73 }} />
+      <Link
+        id="link__mike-office"
+        to="mike-office"
+        position={{ x: -13.9, y: -3.05, z: 6.48 }}
+        title="Mike's Office"
+      />
+      <Link
+        id="hotspot__backyard"
+        to="suzy-backyard"
+        position={{ x: 0.86, y: -7.10, z: -17.73 }}
+        title="Suzy's Backyard"
+      />
     </Entity>
   ),
 };
