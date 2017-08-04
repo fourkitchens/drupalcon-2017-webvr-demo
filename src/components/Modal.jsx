@@ -233,7 +233,7 @@ Modal.propTypes = {
   content: PropTypes.string,
   image: PropTypes.string,
   sound: PropTypes.string,
-  volume: PropTypes.string,
+  volume: PropTypes.number,
   visible: PropTypes.bool,
   to: PropTypes.string,
   position: PropTypes.shape({
@@ -249,7 +249,7 @@ Modal.defaultProps = {
   content: 'Please give me some content :)',
   image: '',
   sound: '',
-  volume: '10',
+  volume: 10,
   visible: false,
   to: '',
   position: { x: 0, y: 0, z: -10 },
