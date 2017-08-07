@@ -37,11 +37,7 @@ const loaders = [
     loaders: ['babel-loader'],
   },
   {
-    test: /\.(jpe?g|png|gif|svg|mp3)$/i,
-    loaders: ['file-loader'],
-  },
-  {
-    test: /\.(dae)$/i,
+    test: /\.(jpe?g|png|gif|svg|mp3|obj|mtl|dae)$/i,
     loaders: ['file-loader'],
   },
 ];

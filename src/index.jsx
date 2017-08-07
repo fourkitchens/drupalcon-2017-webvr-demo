@@ -12,6 +12,7 @@ import ReactGA from 'react-ga';
 
 import Camera from './components/Camera.jsx';
 import NoMatch from './components/scenes/NoMatch.jsx';
+import Landing from './components/scenes/Landing.jsx';
 import SuzyBackyard from './components/scenes/Suzy-backyard.jsx';
 import SuzyOffice from './components/scenes/Suzy-office.jsx';
 import MikeOffice from './components/scenes/Mike-office.jsx';
@@ -33,8 +34,8 @@ class NavigationScene extends React.Component {
 
     // Collect all scenes into an iterable object.
     this.state = {};
-    this.state.scenes = [SuzyBackyard, SuzyOffice, MikeOffice, MikeWorkshop, NoMatch];
-    this.state.initialScene = this.fetchSceneByName('mike-workshop');
+    this.state.scenes = [Landing, SuzyBackyard, SuzyOffice, MikeOffice, MikeWorkshop, NoMatch];
+    this.state.initialScene = this.fetchSceneByName('landing');
     this.state.currentScene = this.fetchSceneByUrl();
   }
 
@@ -72,9 +73,13 @@ class NavigationScene extends React.Component {
    *   Array of sky image tags.
    */
   fetchSkys() {
-    return this.state.scenes.map(scene => (
-      <img key={scene.name} id={scene.name} src={scene.sky} />
-    ));
+    return this.state.scenes.map((scene) => {
+      if (scene.sky) {
+        return (<img key={scene.name} id={scene.name} src={scene.sky} />);
+      }
+
+      return '';
+    });
   }
 
   /**
@@ -116,13 +121,29 @@ class NavigationScene extends React.Component {
   }
 
   render() {
+    const { currentScene: { scene, name, sky, skyColor } } = this.state;
+
+    // Returns a sky with either a source image or a color depending on the
+    // current scene's properties.
+    const Sky = () => {
+      if (sky) {
+        return (<Entity primitive="a-sky" radius="30" src={`#${name}`} />);
+      }
+
+      if (skyColor) {
+        return (<Entity primitive="a-sky" radius="30" color={skyColor} />);
+      }
+
+      return '';
+    };
+
     return (
       <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
         <Entity laser-controls position={{ x: 0.3, y: -0.6, z: 0 }} />
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
-        <Entity primitive="a-sky" radius="30" src={`#${this.state.currentScene.name}`} />
+        <Sky />
         <Camera />
-        {this.state.currentScene.scene()}
+        {scene()}
       </Scene>
     );
   }
