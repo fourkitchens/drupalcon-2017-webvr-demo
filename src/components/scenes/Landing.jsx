@@ -14,7 +14,8 @@ require('aframe-look-at-component');
 const Landing = {
   name: 'landing',
   sky: false,
-  skyColor: '#24CAFF',
+  skyColor: '#0098cc',
+  cameraRotation: { x: 0, y: -68, z: 0 },
   scene: () => (
     <Entity
       id="landing__terrain"
@@ -22,8 +23,8 @@ const Landing = {
       src={require('../../assets/3d/landing.obj')}
       mtl={require('../../assets/3d/landing.mtl')}
       scale={{ x: 20, y: 20, z: 20 }}
-      position={{ x: 0, y: 0, z: -2 }}
-      rotation={{ x: 0, y: 200, z: 0 }}
+      position={{ x: 53, y: 1.8, z: -45 }}
+      rotation={{ x: -1.08, y: 200, z: 0 }}
     />
   ),
 };

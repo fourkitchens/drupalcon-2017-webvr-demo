@@ -121,7 +121,15 @@ class NavigationScene extends React.Component {
   }
 
   render() {
-    const { currentScene: { scene, name, sky, skyColor } } = this.state;
+    const {
+      currentScene: {
+        scene,
+        name,
+        sky,
+        skyColor,
+        cameraRotation = { x: 0, y: 0, z: 0 },
+      },
+    } = this.state;
 
     // Returns a sky with either a source image or a color depending on the
     // current scene's properties.
@@ -131,7 +139,7 @@ class NavigationScene extends React.Component {
       }
 
       if (skyColor) {
-        return (<Entity primitive="a-sky" radius="30" color={skyColor} />);
+        return (<Entity primitive="a-sky" radius="360" color={skyColor} />);
       }
 
       return '';
@@ -142,7 +150,7 @@ class NavigationScene extends React.Component {
         <Entity laser-controls position={{ x: 0.3, y: -0.6, z: 0 }} />
         <Entity primative="a-assets">{this.fetchSkys()}</Entity>
         <Sky />
-        <Camera />
+        <Camera rotation={cameraRotation} />
         {scene()}
       </Scene>
     );
