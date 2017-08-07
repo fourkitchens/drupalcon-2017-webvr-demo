@@ -65,7 +65,6 @@ class Camera extends Component {
         mouse-cursor={!AFRAME.utils.device.checkHeadsetConnected()}
         camera
         look-controls
-        wasd-controls
         rotation={this.props.rotation}
       >
         {cursor}
