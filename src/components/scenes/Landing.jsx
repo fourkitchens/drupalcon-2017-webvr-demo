@@ -17,7 +17,7 @@ const Landing = {
   skyColor: '#93D3E9',
   cameraRotation: { x: 0, y: -68, z: 0 },
   scene: () => (
-    <Entity>
+    <Entity id="landing__wrapper">
       <Entity
         id="landing__terrain"
         primitive="a-obj-model"

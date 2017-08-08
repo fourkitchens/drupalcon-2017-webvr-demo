@@ -19,8 +19,9 @@ const MikeWorkshop = {
   name: 'mike-workshop',
   sky: require('../../assets/images/scenes/mike-workshop.jpg'),
   scene: () => (
-    <Entity>
+    <Entity id="workshop__wrapper">
       <Entity
+        id="workshop__sound"
         primitive="a-sound"
         src={`src: url(${require('../../assets/sounds/mike-saw.mp3')})`}
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
@@ -28,8 +29,10 @@ const MikeWorkshop = {
         autoplay
       />
       <Entity
+        id="welcome__wrapper"
         rotation={{ x: 0, y: -26.76, z: 0 }}
         position={{ x: 6.88, y: 0, z: -11.46 }}
+        scale={{ x: 1, y: 1, z: 1 }}
       >
         <Entity
           id="welcome__logo"
