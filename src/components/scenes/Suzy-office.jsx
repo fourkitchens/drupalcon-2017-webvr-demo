@@ -9,6 +9,7 @@ import React from 'react';
 import Link from '../Link.jsx';
 import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
+import Home from '../Home.jsx';
 
 /**
  * Returns React component that render's Suzy Bate's initial scene.
@@ -53,6 +54,7 @@ const SuzyTwo = {
       />
       <Link id="link__mike-office" to="mike-office" position={{ x: -13.9, y: -3.05, z: 6.48 }} />
       <Link id="hotspot__backyard" to="suzy-backyard" position={{ x: 0.86, y: -7.10, z: -17.73 }} />
+      <Home />
     </Entity>
   ),
 };

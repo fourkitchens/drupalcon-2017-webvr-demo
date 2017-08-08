@@ -9,6 +9,7 @@ import React from 'react';
 import Link from '../Link.jsx';
 import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
+import Home from '../Home.jsx';
 
 require('aframe-look-at-component');
 
@@ -108,6 +109,7 @@ const MikeWorkshop = {
         to="mike-office"
         position={{ x: 14.50, y: -1.92, z: 16.32 }}
       />
+      <Home />
     </Entity>
   ),
 };

@@ -8,6 +8,7 @@ import React from 'react';
 
 import Link from '../Link.jsx';
 import Modal from '../Modal.jsx';
+import Home from '../Home.jsx';
 
 /**
  * Returns React component that render's Suzy Bate's initial scene.
@@ -50,6 +51,7 @@ const SuzyOne = {
         no matter what the context! Make sure to check out the "flat" version
         of this content in the Knowledge section of our website.'
       />
+      <Home />
     </Entity>
   ),
 };

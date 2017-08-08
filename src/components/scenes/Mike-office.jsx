@@ -9,6 +9,7 @@ import React from 'react';
 import Link from '../Link.jsx';
 import Sound from '../Sound.jsx';
 import Modal from '../Modal.jsx';
+import Home from '../Home.jsx';
 
 /**
  * Returns React component that render's Mike's office.
@@ -68,6 +69,7 @@ const MikeOffice = {
         to="mike-workshop"
         position={{ x: 20.26, y: -6.87, z: 6.09 }}
       />
+      <Home />
     </Entity>
   ),
 };
