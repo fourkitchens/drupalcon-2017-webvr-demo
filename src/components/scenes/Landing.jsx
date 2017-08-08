@@ -28,23 +28,73 @@ const Landing = {
         rotation={{ x: -1.08, y: 200, z: 0 }}
       />
       <Entity
+        id="landing__light-directional"
         light={{
           type: 'directional',
-          color: '#e3e3cd',
+          color: '#FFFFFF',
           intensity: 0.5,
         }}
         position={{ x: -237.22, y: 229.59, z: -185.12 }}
         rotation={{ x: -5.30, y: 14.14, z: 3.16 }}
       />
       <Entity
+        id="landing__light-ambient"
         light={{
           type: 'ambient',
-          color: '#e3e3cd',
+          color: '#FFFFFF',
           intensity: 0.98,
         }}
         position={{ x: -237.22, y: 229.59, z: -185.12 }}
         rotation={{ x: -5.30, y: 14.14, z: 3.16 }}
       />
+
+      <Entity
+        id="landing__links"
+        scale={{ x: 6, y: 6, z: 6 }}
+        position={{ x: 6.8, y: 0, z: -2.6 }}
+        rotation={{ x: 0, y: -68, z: 0 }}
+      >
+        <a-plane
+          id="landing__link-mike-workshop"
+          width={0.5}
+          height={0.31}
+          color="#FFFFFF"
+          position="-0.35 0.35 0"
+          rotation="0 4.3 0"
+          onClick={() => { window.location.hash = 'mike-workshop'; }}
+          text="color: #000000; align: center; value: Mike's Workshop; width: 1"
+        />
+        <a-plane
+          id="landing__link-mike-office"
+          width={0.5}
+          height={0.31}
+          color="#FFFFFF"
+          position="-0.35 0 0"
+          rotation="0 4.3 0"
+          onClick={() => { window.location.hash = 'mike-office'; }}
+          text="color: #000000; align: center; value: Mike's Office; width: 1"
+        />
+        <a-plane
+          id="landing__link-suzy-office"
+          width={0.5}
+          height={0.31}
+          color="#FFFFFF"
+          position="0.35 0.35 0"
+          rotation="0 -4.3 0"
+          onClick={() => { window.location.hash = 'suzy-office'; }}
+          text="color: #000000; align: center; value: Suzy's Office; width: 1"
+        />
+        <a-plane
+          id="landing__link-suzy-backyard"
+          width={0.5}
+          height={0.31}
+          color="#FFFFFF"
+          position="0.35 0 0"
+          rotation="0 -4.3 0"
+          onClick={() => { window.location.hash = 'suzy-backyard'; }}
+          text="color: #000000; align: center; value: Suzy's Backyard; width: 1"
+        />
+      </Entity>
     </Entity>
   ),
 };
