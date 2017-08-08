@@ -28,32 +28,17 @@ const Landing = {
         rotation={{ x: -1.08, y: 200, z: 0 }}
       />
       <Entity
-        id="landing__light-directional"
-        light={{
-          type: 'directional',
-          color: '#FFFFFF',
-          intensity: 0.5,
-        }}
-        position={{ x: -237.22, y: 229.59, z: -185.12 }}
-        rotation={{ x: -5.30, y: 14.14, z: 3.16 }}
-      />
-      <Entity
-        id="landing__light-ambient"
-        light={{
-          type: 'ambient',
-          color: '#FFFFFF',
-          intensity: 0.98,
-        }}
-        position={{ x: -237.22, y: 229.59, z: -185.12 }}
-        rotation={{ x: -5.30, y: 14.14, z: 3.16 }}
-      />
-
-      <Entity
         id="landing__links"
         scale={{ x: 6, y: 6, z: 6 }}
         position={{ x: 6.8, y: 0, z: -2.6 }}
         rotation={{ x: 0, y: -68, z: 0 }}
       >
+        <Entity
+          primitive="a-text"
+          value="Working with the Web Chefs"
+          align="center"
+          position={{ x: 0, y: 0.8, z: 0 }}
+        />
         <a-plane
           id="landing__link-mike-workshop"
           width={0.5}
