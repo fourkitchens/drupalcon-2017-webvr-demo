@@ -29,14 +29,27 @@ const Link = ({ id, title, to, color, position: { x, y, z }, src }) => (
     look-at="#camera"
   >
     <Entity
-      primitive="a-text"
-      id={`${id}--text`}
-      scale={{ x: 3, y: 3, z: 3 }}
-      color="#127218"
-      value={title}
-      align="center"
-      width={6}
-      position={{ x: 0, y: -1.5, z: 0 }}
+      id={`${id}--label`}
+      scale={{ x: 0.6, y: 0.6, z: 0.6 }}
+      position={{ x: 0, y: -2, z: 0 }}
+      geometry={{
+        primitive: 'plane',
+        width: 'auto',
+        height: 2.5,
+      }}
+      material={{
+        color: '#000000',
+        transparent: true,
+        opacity: 0.5,
+      }}
+      text={{
+        color: '#FFFFFF',
+        align: 'center',
+        value: title,
+        width: title.length,
+        wrapCount: title.length,
+        zOffset: 1,
+      }}
     />
   </a-circle>
 );
