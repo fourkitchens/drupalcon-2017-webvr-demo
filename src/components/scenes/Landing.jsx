@@ -34,11 +34,37 @@ const Landing = {
         rotation={{ x: 0, y: -68, z: 0 }}
       >
         <Entity
-          primitive="a-text"
-          value="Working with the Web Chefs"
-          align="center"
+          id="welcome__wrapper"
+          scale={{ x: 0.3, y: 0.3, z: 0.3 }}
           position={{ x: 0, y: 0.8, z: 0 }}
-        />
+        >
+          <Entity
+            id="welcome__logo"
+            primitive="a-collada-model"
+            scale="20 20 20"
+            src={`src: url(${require('../../assets/3d/logo.dae')})`}
+            position={{ x: -0.65, y: 0.5, z: 0 }}
+          />
+          <Entity
+            primitive="a-text"
+            id="welcome__title"
+            color="#29833c"
+            wrap-count="30"
+            value="Working with the Web Chefs"
+            align="center"
+            position={{ x: 0, y: 0, z: 0 }}
+          />
+          <Entity
+            primitive="a-text"
+            id="welcome__text"
+            color="#29833c"
+            wrap-count="42"
+            line-height="50"
+            align="center"
+            value="Explore life in WebVR with two of Four Kitchens' best!"
+            position={{ x: 0, y: -0.5, z: 0 }}
+          />
+        </Entity>
         <a-plane
           id="landing__link-mike-workshop"
           width={0.5}

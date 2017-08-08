@@ -29,40 +29,6 @@ const MikeWorkshop = {
         volume={10}
         autoplay
       />
-      <Entity
-        id="welcome__wrapper"
-        rotation={{ x: 0, y: -26.76, z: 0 }}
-        position={{ x: 6.88, y: 0, z: -11.46 }}
-        scale={{ x: 1, y: 1, z: 1 }}
-      >
-        <Entity
-          id="welcome__logo"
-          primitive="a-collada-model"
-          scale="30 30 30"
-          src={`src: url(${require('../../assets/3d/logo.dae')})`}
-          position={{ x: 4.4, y: 2, z: 0 }}
-        />
-        <Entity
-          primitive="a-text"
-          id="welcome__title"
-          scale="3 3 3"
-          color="#FFFFFF"
-          wrap-count="30"
-          value="Working with the Web Chefs"
-          position={{ x: 0, y: 0.6, z: 0 }}
-        />
-        <Entity
-          primitive="a-text"
-          id="welcome__text"
-          scale="3 3 3"
-          color="#FFFFFF"
-          background="#000000"
-          wrap-count="42"
-          line-height="50"
-          value="Explore life in WebVR with two of Four Kitchens' best!"
-          position={{ x: -1.8, y: -0.5, z: 0 }}
-        />
-      </Entity>
       <Modal
         id="modal__mikebio"
         title="Meet Mike Minecki!"
