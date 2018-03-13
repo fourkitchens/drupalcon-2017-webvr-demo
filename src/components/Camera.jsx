@@ -6,8 +6,6 @@
 import { Entity } from 'aframe-react';
 import React, { Component } from 'react';
 
-require('aframe-mouse-cursor-component');
-
 /**
  * Returns React component containing cursor and Camera.
  * {@inheritdoc}
@@ -62,9 +60,9 @@ class Camera extends Component {
     return (
       <Entity
         id="camera"
-        mouse-cursor={!AFRAME.utils.device.checkHeadsetConnected()}
         camera
         look-controls {...this.state.props}
+        cursor="rayOrigin: mouse"
       >
         {cursor}
       </Entity>
