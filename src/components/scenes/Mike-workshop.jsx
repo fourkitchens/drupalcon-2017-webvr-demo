@@ -25,7 +25,6 @@ const MikeWorkshop = {
         src={`src: url(${require('../../assets/sounds/mike-saw.mp3')})`}
         position={{ x: 6.94, y: -7.98, z: -16.98 }}
         volume={10}
-        autoplay
       />
       <Entity
         rotation={{ x: 0, y: -26.76, z: 0 }}
