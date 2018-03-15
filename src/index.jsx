@@ -7,7 +7,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import aframe from 'aframe';
 import { Scene, Entity } from 'aframe-react';
-import registerClickDrag from 'aframe-click-drag-component';
 import ReactGA from 'react-ga';
 
 import Camera from './components/Camera.jsx';
@@ -17,7 +16,6 @@ import SuzyOffice from './components/scenes/Suzy-office.jsx';
 import MikeOffice from './components/scenes/Mike-office.jsx';
 import MikeWorkshop from './components/scenes/Mike-workshop.jsx';
 
-registerClickDrag(aframe);
 ReactGA.initialize('UA-559851-16');
 
 /**
