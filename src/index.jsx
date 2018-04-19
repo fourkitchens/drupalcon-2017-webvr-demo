@@ -5,7 +5,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import aframe from 'aframe';
+import aframe from 'aframe'; // eslint-disable-line
 import { Scene, Entity } from 'aframe-react';
 import ReactGA from 'react-ga';
 

@@ -86,9 +86,9 @@ aframe-react@^4.2.4:
   version "1.0.0"
   resolved "https://codeload.github.com/patrickocoffeyo/aframe-ui-modal-component/tar.gz/b3fd81793c042f1a60870ed43060f798115fa87d"
 
-aframe@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/aframe/-/aframe-0.8.1.tgz#4e2ce79bced998ee3638cc634d3dadda6217660b"
+aframe@0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/aframe/-/aframe-0.8.2.tgz#435dd7c7d2f059316af87f4a9783427b0617e11f"
   dependencies:
     "@tweenjs/tween.js" "^16.8.0"
     browserify-css "^0.8.2"
@@ -101,9 +101,9 @@ aframe@^0.8.0:
     present "0.0.6"
     promise-polyfill "^3.1.0"
     style-attr "^1.0.2"
-    three "github:dmarcos/three.js#r90fixPose"
+    three "github:supermedium/three.js#r90fixMTLLoader"
     three-bmfont-text "^2.1.0"
-    webvr-polyfill "^0.9.40"
+    webvr-polyfill "^0.10.5"
 
 agent-base@2:
   version "2.0.1"
@@ -1081,6 +1081,14 @@ caniuse-api@^1.5.2:
 caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000646"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000646.tgz#c724b90d61df24286e015fc528d062073c00def4"
+
+cardboard-vr-display@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/cardboard-vr-display/-/cardboard-vr-display-1.0.11.tgz#585a4df2f92fc4af73b934908c13e0d4f75540cc"
+  dependencies:
+    gl-preserve-state "^1.0.0"
+    nosleep.js "^0.7.0"
+    webvr-polyfill-dpdb "^1.0.7"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -2670,6 +2678,10 @@ github@~0.1.10:
   version "0.1.16"
   resolved "https://registry.yarnpkg.com/github/-/github-0.1.16.tgz#895d2a85b0feb7980d89ac0ce4f44dcaa03f17b5"
 
+gl-preserve-state@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gl-preserve-state/-/gl-preserve-state-1.0.0.tgz#4ef710d62873f1470ed015c6546c37dacddd4198"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -4025,6 +4037,10 @@ normalize-url@^1.4.0:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+nosleep.js@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/nosleep.js/-/nosleep.js-0.7.0.tgz#cfd919c25523ca0d0f4a69fb3305c083adaee289"
 
 "npm-package-arg@^3.0.0 || ^4.0.0":
   version "4.2.1"
@@ -5761,9 +5777,9 @@ three-buffer-vertex-data@^1.0.0:
   dependencies:
     flatten-vertex-data "^1.0.0"
 
-"three@github:dmarcos/three.js#r90fixPose":
+"three@github:supermedium/three.js#r90fixMTLLoader":
   version "0.90.0"
-  resolved "https://codeload.github.com/dmarcos/three.js/tar.gz/9be3a8056dead5edbdb4ff2b532138ea5e74054e"
+  resolved "https://codeload.github.com/supermedium/three.js/tar.gz/5ef2887ab3621cae54fa129a500424d6caa25b62"
 
 throttleit@^1.0.0:
   version "1.0.0"
@@ -6197,9 +6213,15 @@ websocket-extensions@>=0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
 
-webvr-polyfill@^0.9.40:
-  version "0.9.41"
-  resolved "https://registry.yarnpkg.com/webvr-polyfill/-/webvr-polyfill-0.9.41.tgz#dcaaed05ea8e14a44b629679ca32b9a35780e0e3"
+webvr-polyfill-dpdb@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/webvr-polyfill-dpdb/-/webvr-polyfill-dpdb-1.0.7.tgz#e00c69ef0d90a0bdf7ae848fa4a928bde4359775"
+
+webvr-polyfill@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/webvr-polyfill/-/webvr-polyfill-0.10.5.tgz#0cbe84419f8969a6af52662f0892d7139474d757"
+  dependencies:
+    cardboard-vr-display "1.0.11"
 
 whatwg-fetch@>=0.10.0:
   version "2.0.3"
