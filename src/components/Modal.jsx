@@ -27,6 +27,7 @@ class Modal extends React.Component {
       width: 4,
       textOffset: -1.5,
       lastActivation: null,
+      soundPlaying: false,
     };
 
     // Adjust modal height and text offset if a modal image was provided.
@@ -46,10 +47,47 @@ class Modal extends React.Component {
       if (e.constructor.name === 'CustomEvent' && e.target.id === `${this.props.id}-hotspot`) {
         this.toggleVisibility(true);
       } else if ((Date.now() - this.state.lastActivation) > 100 &&
-                 (!AFRAME.utils.device.isMobile())) {
+        (!AFRAME.utils.device.isMobile())) {
         this.toggleVisibility(false);
       }
     });
+  }
+
+  /**
+   * Determines if a sound is set for this modal.
+   *
+   * @returns {boolean}
+   *   Returns true if a sound is set, otherwise returns false.
+   */
+  hasSound() {
+    return this.props.sound.length > 0;
+  }
+
+  /**
+   * Stops modal sound playback.
+   */
+  playSound() {
+    if (this.hasSound() && !this.state.soundPlaying) {
+      const entity = document.getElementById(`${this.props.id}-sound`);
+      // Prevent overplay.
+      entity.components.sound.stopSound();
+      entity.addEventListener('sound-ended', () => {
+        this.state.soundPlaying = false;
+      });
+      entity.components.sound.playSound();
+      this.state.soundPlaying = true;
+    }
+  }
+
+  /**
+   * Stops modal sound playback.
+   */
+  stopSound() {
+    if (this.hasSound() && this.state.soundPlaying) {
+      const entity = document.getElementById(`${this.props.id}-sound`);
+      entity.components.sound.stopSound();
+      this.state.soundPlaying = false;
+    }
   }
 
   /**
@@ -66,6 +104,11 @@ class Modal extends React.Component {
 
     // Update the state visibility property.
     this.setState({ visible, lastActivation: Date.now() });
+
+    // Stop sound playback when modal closes.
+    if (!visible) {
+      this.stopSound();
+    }
 
     // Track event in Google Analytics.
     const action = visible ? 'closed' : 'opened';
@@ -118,7 +161,9 @@ class Modal extends React.Component {
           color="#FFFFFF"
           position={`${this.props.position.x} ${this.props.position.y} ${this.props.position.z}`}
           look-at="#camera"
+          onClick={() => this.playSound()}
         />
+
         <Entity
           id={`${this.props.id}-box`}
           primitive="a-box"
@@ -170,6 +215,12 @@ class Modal extends React.Component {
             radius="0.3"
             onClick={() => this.toggleVisibility(false)}
           />
+          <a-sound
+            id={`${this.props.id}-sound`}
+            look-at="#camera"
+            src={this.props.sound || null}
+            volume={this.props.volume}
+          />
         </Entity>
       </Entity>
     );
@@ -181,6 +232,8 @@ Modal.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
   image: PropTypes.string,
+  sound: PropTypes.string,
+  volume: PropTypes.number,
   visible: PropTypes.bool,
   to: PropTypes.string,
   position: PropTypes.shape({
@@ -195,6 +248,8 @@ Modal.defaultProps = {
   title: 'Please give me a title :)',
   content: 'Please give me some content :)',
   image: '',
+  sound: '',
+  volume: 10,
   visible: false,
   to: '',
   position: { x: 0, y: 0, z: -10 },
