@@ -62,11 +62,13 @@ const MikeOffice = {
         id="link__suzy-office"
         to="suzy-office"
         position={{ x: -16.27, y: -5.02, z: -2.50 }}
+        title="Suzy's Office"
       />
       <Link
         id="link__mike-workshop"
         to="mike-workshop"
         position={{ x: 20.26, y: -6.87, z: 6.09 }}
+        title="Mike's Workshop"
       />
     </Entity>
   ),

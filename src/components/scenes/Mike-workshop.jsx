@@ -103,6 +103,7 @@ const MikeWorkshop = {
         id="link__mike-office"
         to="mike-office"
         position={{ x: 14.50, y: -1.92, z: 16.32 }}
+        title="Mike's Office"
       />
     </Entity>
   ),

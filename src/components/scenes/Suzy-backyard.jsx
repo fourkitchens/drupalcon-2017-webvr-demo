@@ -41,7 +41,12 @@ const SuzyOne = {
         to="suzy-office"
         image={require('../../assets/images/png/suzy-shedquarters.png')}
       />
-      <Link id="hotspot-house-3" to={'suzy-house'} position={{ x: -16, y: 3, z: 21.5 }} />
+      <Link
+        id="hotspot-house-3"
+        to="suzy-house"
+        position={{ x: -16, y: 3, z: 21.5 }}
+        title="Suzy's House"
+      />
       <Modal
         id="modal__treehouse"
         title="Web Chef Club House!"
